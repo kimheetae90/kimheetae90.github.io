@@ -23,8 +23,8 @@ description              : ""
 url                      : "https://kimheetae90.github.io"
 baseurl                  : ""
 repository               : "kimheetae90/kimheetae90.github.io"
-teaser                   : "/assets/images/avatar.jpeg"
-logo                     : #"/assets/images/avatar.jpeg"
+teaser                   : "/assets/images/avatar.jpg"
+logo                     : #"/assets/images/avatar.jpg"
 masthead_title           : "KIMI"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : "Heetae Kim"
-  avatar           : "/assets/images/avatar.jpeg"
+  avatar           : "/assets/images/avatar.jpg"
   bio              : "I am an amazing person."
   location         : "Seoul Korea"
   email            :
