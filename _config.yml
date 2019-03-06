@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Tech Blog"
 title_separator          : "-"
 name                     : "Heetae Kim"
-description              : ""
+description              : "Let's programming"
 url                      : "https://kimheetae90.github.io"
 baseurl                  : ""
 repository               : "kimheetae90/kimheetae90.github.io"
@@ -98,7 +98,7 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google"
   google:
     tracking_id          :
     anonymize_ip         : # true, false (default)
@@ -108,13 +108,13 @@ analytics:
 author:
   name             : "Heetae Kim"
   avatar           : "/assets/images/avatar.jpg"
-  bio              : "I am an amazing person."
+  bio              : "Programmer."
   location         : "Seoul Korea"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      # url: mailto:kimheetae90@dontsend.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -126,7 +126,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      # url: "https://github.com/kimheetae90"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -142,7 +142,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      # url:"https://github.com/kimheetae90"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -290,6 +290,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
