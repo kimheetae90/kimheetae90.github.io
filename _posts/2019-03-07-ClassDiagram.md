@@ -1,7 +1,7 @@
 ---
 title: "ClassDiagram"
-date: 2019-03-07 22:34:28 +0900
-excerpt: "Welcom"
+date: 2019-03-07 14:30:28 +0900
+excerpt: "[URL]Class Diagram"
 header:
   overlay_image: /assets/images/wallpaper.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
@@ -15,4 +15,4 @@ categories: programing
 
 
 ### Class 표현
-![class diagram 예시](/assets/images/ClassDiagram/classdiagram_example.png){: width="100%" height="100%"}
+![class diagram 예시]({{ "/assets/images/ClassDiagram/classdiagram_example.png" | absolute_url }}){: width="100%" height="100%"}
