@@ -13,4 +13,4 @@ categories: programing
 
 
 ### Class 표현
-![class diagram 예시](/assets/images/ClassDiagram/classdiagram_example.png)
+![class diagram 예시](/assets/images/classdiagram/classdiagram-example.png)
