@@ -16,4 +16,4 @@ categories: programing
 
 
 ### Class 표현
-![class diagram 예시]({{ "/assets/images/ClassDiagram/classdiagram_example.png" | absolute_url }}){: width="100%" height="100%"}
+![class diagram 예시](/assets/images/ClassDiagram/classdiagram_example.png)
