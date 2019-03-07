@@ -2,11 +2,11 @@ title: KIMI Tech Blog
 email: kimheetae90@me.com
 description: |
  Tech Blog
-baseurl: ''
-url: 'http://kimheetae90.github.io'
+baseurl: ""
+url: "http://kimheetae90.github.io"
 timezone: Asia/Seoul 
 
-repository: kimheetae90/kimheetae90.github.io
+repository: "kimheetae90/kimheetae90.github.io"
 
 permalink: /:year/:month/:day/:title/
 
@@ -22,7 +22,7 @@ plugins:
   - jekyll-paginate
 
 paginate: 5
-paginate_path: '/page/:num/'
+paginate_path: "/page/:num/"
 
 collections:
   authors:
