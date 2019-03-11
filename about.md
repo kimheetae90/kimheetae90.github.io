@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-abc
+자기소개 준비 중
 
 ## Skills
 - C#
