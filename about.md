@@ -14,4 +14,4 @@ abc
 
 ## Projects
 [구글][1]
-[1]:https://google.com/"구글"
+[1]:https://google.com/"google"
