@@ -20,7 +20,7 @@ url: "https://kimheetae90.github.io"
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
-encoding: UTF-8
+encoding: utf-8
 
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'

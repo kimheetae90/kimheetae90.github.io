@@ -7,11 +7,11 @@ layout: page
 abc
 
 ## Skills
-1. C#
-2. Unity
-3. Git
+- C#
+- Unity
+- Git
 
 
 ## Projects
-[Google][1]
-[1]:https://google.com/"Google"
+[구글][id]
+[id]: https://google.com/ "구글"
