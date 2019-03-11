@@ -4,18 +4,14 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>abc</p>
+abc
 
-<h2>Skills</h2>
+## Skills
+1. C#
+2. Unity
+3. Git
 
-<ul class="skill-list">
-	<li>C#</li>
-	<li>Unity</li>
-	<li>Git</li>
-</ul>
 
-<h2>Projects</h2>
-
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-</ul>
+## Projects
+[구글][1]
+[1]:https://google.com/"구글"
