@@ -4,7 +4,7 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>자기소개 준비 중</p>
+<p>abc</p>
 
 <h2>Skills</h2>
 
