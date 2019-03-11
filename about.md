@@ -1,7 +1,6 @@
 ---
 title: About
 layout: page
-encoding: utf-8
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
