@@ -13,5 +13,5 @@ abc
 
 
 ## Projects
-[구글][id]
-[id]: https://google.com/ "구글"
+[google][id]
+[id]: https://google.com/ "google"
