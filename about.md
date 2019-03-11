@@ -13,6 +13,8 @@ abc
 
 
 ## Projects
-- [google][id]
+- [google]
+- [naver]
 
-[id]: https://google.com/ "google"
+[google]: https://google.com/
+[naver]: https://naver.com/
