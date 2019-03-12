@@ -12,9 +12,9 @@ picture: assets/images/profile.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
-resume: true
-resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume: false
+resume-external: false
+resume-url: "" #https://google.com/?q=my+resume
 
 url: "https://kimheetae90.github.io"
 # your url: http://USERNAME.github.io
@@ -35,10 +35,10 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: kimheetae90
-twitter: 
+# facebook: kimheetae90
+# twitter:
 # google: mygoogle
-# instagram: myinstagram
+instagram: kimheetae90
 # pinterest: mypinterest
 # linkedin: mylinkedin
 # youtube: myyoutube
@@ -52,7 +52,7 @@ github: kimheetae90
 #medium: medium
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: kimheetae@kimheetae.com
+email: kimheetae90@gmail.com
 
 authors:
     heetaekim:
@@ -60,7 +60,7 @@ authors:
         bio: A Man who like singing and programming
         external-image: false
         picture: assets/images/profile.jpg
-        
+
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
 # normal = 560px / large = 810px
