@@ -31,7 +31,7 @@ description: Android Project 구조를 이해하자!
 ### Android View로 보는 Project 구조
 Android Studio는 기본적으로 Android View로 프로젝트 파일을 표시한다. 사용되지 않는 파일은 숨기고 프로젝트에서 필요한 파일들을 정리해서 보여준다. 여기서 보여지는 구조는 실제 디스크에 있는 파일구조와는 다르다.
 
-![Android View](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-result-garbage.jpg)
+![Android View](/assets/images/post/s.jpg)
 
 ##### app Module
 프로젝트 생성시 기본으로 생기는 Android App Module.
@@ -46,7 +46,7 @@ Android Studio는 기본적으로 Android View로 프로젝트 파일을 표시�
 ### Project View로 보는 Project 구조
 Android View에서 숨겨진 모든 파일을 포함하여 프로젝트의 실제 파일구조를 보여준다.
 
-![Project View](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-result-garbage.jpg)
+![Project View](/assets/images/post/s.jpg)
 
 아래 목록은 주요 모듈에 대한 설명이다.
 ```
