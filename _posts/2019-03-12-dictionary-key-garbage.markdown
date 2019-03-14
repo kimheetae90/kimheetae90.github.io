@@ -22,14 +22,12 @@ Dictionary는 Key와 Value를 갖는 컬렉션이다. Dictionary<Key,Value>의 �
 cf) MS Doc에서는 IEqualityComparer<T>를 구현하기보다 EqualityComparer<T> 클래스를 상속해서 재정의하는 방법으로 사용하는 것을 권장하고 있다.
 cf) IEqualityComparer<T>는 equality comparisons만 제공! sorting and ordering은 IComparer<T>를 구현해야 함!
 
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 # 문제점
 ---
 Key를 비교할 때에는 Equals(Object)를 사용하게 되는데 int 같은 경우는 System.Int32 구조체에 IEquatable<Int32>가 구현되어있어 Key를 비교할 때 가비지가 발생하지 않는다. 하지만 Enum타입이나 사용자가 만든 struct같은 경우는 IEquatable<T>를 구현하지 않아서 IEquatable<T>.Equals를 사용할 때 Objects.Equals(Object) 가 사용되게 되는데 이 때 boxing이 일어난다! 곧 가비지가 발생한다!
 
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 # 가비지 발생 확인
 ---
 Dictionary의 Key를 int와 Enum으로 구분하여 자주 사용되는 메서드를 호출해보고 가비지 발생량을 Unity에서 작성하고 Unity Profiler를 통해 체크해봤다.
@@ -192,8 +190,7 @@ TryGetValue는 가장 빈번할 것으로 예상되는 메서드이다. 실제�
 
 약 5.7MB의 가비지가 발생했다.
 
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 # 해결 방안!
 ---
 위의 설명처럼 Key에 대한 일치 여부를 판별할 때에는 IEqualityComparer<T>라는 제네릭 인터페이스를 사용할 수 있다. 그렇게 되면 EqualityComparer<T>.Default를 사용하지 않고 IEqualityComparer<T>를 구현한 메서드를 사용할 것이다. IEqualityComparer<T>를 구현하여 비교할 때 사용될 클래스를 작성하자!

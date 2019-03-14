@@ -25,8 +25,7 @@ description: Android Project 구조를 이해하자!
 
  Google Cloud Backend 코드를 포함할 수 있는 컨테이너 제공
 
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
 # Android Project
 ---
 ### Android View로 보는 Project 구조
