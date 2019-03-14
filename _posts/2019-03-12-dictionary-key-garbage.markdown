@@ -23,10 +23,12 @@ cf) MS Doc에서는 IEqualityComparer<T>를 구현하기보다 EqualityComparer<
 cf) IEqualityComparer<T>는 equality comparisons만 제공! sorting and ordering은 IComparer<T>를 구현해야 함!
 
 &nbsp;
+&nbsp;
 # 문제점
 ---
 Key를 비교할 때에는 Equals(Object)를 사용하게 되는데 int 같은 경우는 System.Int32 구조체에 IEquatable<Int32>가 구현되어있어 Key를 비교할 때 가비지가 발생하지 않는다. 하지만 Enum타입이나 사용자가 만든 struct같은 경우는 IEquatable<T>를 구현하지 않아서 IEquatable<T>.Equals를 사용할 때 Objects.Equals(Object) 가 사용되게 되는데 이 때 boxing이 일어난다! 곧 가비지가 발생한다!
 
+&nbsp;
 &nbsp;
 # 가비지 발생 확인
 ---
@@ -190,6 +192,7 @@ TryGetValue는 가장 빈번할 것으로 예상되는 메서드이다. 실제�
 
 약 5.7MB의 가비지가 발생했다.
 
+&nbsp;
 &nbsp;
 # 해결 방안!
 ---

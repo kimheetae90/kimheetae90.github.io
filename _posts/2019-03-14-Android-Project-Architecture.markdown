@@ -14,12 +14,18 @@ description: Android Project 구조를 이해하자!
 ---
 소스 파일 및 빌드 설정으로 구성된 모음이다. 프로젝트는 하나 이상의 모듈로 구성되고 모듈은 다른 모듈에 종속성으로 사용할 수 있다. 
 * Android App Module
+
  앱 소스 코드, 리소스 파일, 앱 수준 등을 포함할 수 있는 컨테이너 제공. 프로젝트를 새로 만들면 기본 모듈 이름인 'app'으로 생성된다.
+
 * Library Module
+
  Android Project에서 앱을 빌드하는데 필요한 소스코드, 리소스파일, 매니페스트 등을 포함할 수 있는 컨테이너인 Android Library와 Java 소스파일인 Java Library. Android Library는 빌드 시 AAR(Android Archive)로 생성되고 Java Library는 JAR(Java Archive)로 생성됨
-* Google Cloud Mod
+
+* Google Cloud Module
+
  Google Cloud Backend 코드를 포함할 수 있는 컨테이너 제공
 
+&nbsp;
 &nbsp;
 # Android Project
 ---
