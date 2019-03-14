@@ -51,7 +51,7 @@ Android View에서 숨겨진 모든 파일을 포함하여 프로젝트의 실�
 build/ : 빌드 출력을 포함
 libs/ : 프로젝트에 추가되는 외부 라이브러리 포함
 src/ : 모든 코드 및 리소스 포함. 처음 실행될 때 MainActivity 클래스를 이용한다.
-AndroidMenifest.xml : AndroidManifest는 안드로이드 어플리케이션을 구동하는데 필요한 설정값, 권한 정보 등을 관리하는 파일
+AndroidMenifest.xml : 어플리케이션을 구동하는데 필요한 설정값, 권한 정보 등을 관리하는 파일
 java/ : Java 소스 코드 포함
 jni/ : JNI(Java Native Interface)를 사용하는 네이티브 코드 포함
 gen/ : Android Studio에서 생성하는 Java파일 포함(예 : R.java)
