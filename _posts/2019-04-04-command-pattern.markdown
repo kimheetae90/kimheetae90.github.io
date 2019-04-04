@@ -356,11 +356,11 @@ public class CommandManager : MonoBehaviour
 &nbsp;&nbsp;&nbsp;&nbsp;
 # 생각되는 문제점
 ---
-Command Pattern은 명령을 추상화하여 각 기능끼리 디커플링하고 관리자와 떨어뜨려 제작하는 방법이기에 결국엔 Event와 유사하게 Invoke되는 방식이다. 이 때 주의할 점은 Invoke된 Command(A)에서 또 다른 Command(B)를 Invoke하고 다시 기존의 Command(A)를 Invoke하는 경우가 생길 수 도 있다. 다음과 같은 경우엔 무한루프로 이어지게 된다.
-&nbsp;
-또, Command 클래스에서 기능 수행에 필요한 객체의 레퍼런스를 Caching해서 사용하는데 이 때 실제 객체가 사라지고 나서 기능이 수행된다면 NullReference가 발생할 것이다. 이 상황에 대한 예외처리도 대비해야 할 것이다.
-&nbsp;
-그리고 GC를 탑재하고 있는 언어의 경우에서는 사용이 완료된 Command를 제대로 정리하지 않는다면 Command 클래스에서 사용할 때 Caching한 Reference에 대해서는 GC가 수거해가지 않을 것이기 때문에 메모리누수가 발생할 수 있다.
+Command Pattern은 명령을 추상화하여 각 기능끼리 디커플링하고 관리자와 떨어뜨려 제작하는 방법이기에 결국엔 Event와 유사하게 Invoke되는 방식이다. 
+* 이 때 주의할 점은 Invoke된 Command(A)에서 또 다른 Command(B)를 Invoke하고 다시 기존의 Command(A)를 Invoke하는 경우가 생길 수 도 있다. 다음과 같은 경우엔 무한루프로 이어지게 된다.
+*또, Command 클래스에서 기능 수행에 필요한 객체의 레퍼런스를 Caching해서 사용하는데 이 때 실제 객체가 사라지고 나서 기능이 수행된다면 NullReference가 발생할 것이다. 이 상황에 대한 예외처리도 대비해야 할 것이다.
+*그리고 GC를 탑재하고 있는 언어의 경우에서는 사용이 완료된 Command를 제대로 정리하지 않는다면 Command 클래스에서 사용할 때 Caching한 Reference에 대해서는 GC가 수거해가지 않을 것이기 때문에 메모리누수가 발생할 수 있다.
+
 &nbsp;
 따라서 약한참조를 사용하는 등의 대비를 잘 해야할 것이라 생각된다.
 
