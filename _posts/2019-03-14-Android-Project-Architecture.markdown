@@ -1,11 +1,13 @@
 ﻿---
-title: "[Android] Project 구조"
+title: "Android Project 구조"
 layout: post
 date: 2019-03-14 19:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - android
+- android project
+- android architecture
 category: blog
 author: heetaekim
 description: Android Project 구조를 이해하자!

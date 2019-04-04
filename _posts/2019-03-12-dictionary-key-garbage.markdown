@@ -1,5 +1,5 @@
 ﻿---
-title: "[C#] Dictionary의 Key를 Enum, Class타입으로 사용할 때 GC호출 방지하기!"
+title: "C#에서 Dictionary의 Key를 Enum, Class타입으로 사용할 때 GC호출 방지하기!"
 layout: post
 date: 2019-03-11 14:08
 image: /assets/images/markdown.jpg

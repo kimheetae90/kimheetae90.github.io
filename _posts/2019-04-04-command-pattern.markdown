@@ -7,6 +7,8 @@ headerImage: false
 tag:
 - Design Pattern
 - Command Pattern
+- unity
+- C#
 category: blog
 author: heetaekim
 description: Command Pattern의 소개와 사용법 및 이점
