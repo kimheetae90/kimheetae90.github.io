@@ -20,7 +20,9 @@ description: Observer Pattern의 소개와 사용법 및 이점
 어떤 객체(Subject)의 상태 변화가 발생할 때 다른 특정한 객체들(Observer)이 영향을 받는 경우가 많을 것이다. 이 때 어떤 객체(Subject)를 주체라 하고 다른 특정한 객체들(Observer)을 관찰자 라고 칭하겠다. 주체의 상태 변화에 대하여 관찰자의 반응을 구현하고 싶을 때 서로의 코드가 관여하게 되어 커플링이 발생해 결합도가 올라가게 된다. 이를 방지하게 위해 주체의 상태의 변화를 관찰자에게 통보해주는 기법이 관찰자 패턴이다.
 
 
+
 &nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 # 구현
@@ -37,7 +39,6 @@ public interface IObservable<ObjectType,EventType>
     void OnNotify(ObjectType entity, EventType notiEvent);
 }
 ```
-
 
 ### ObserverMonoBehaviour.cs
 Unity로 제작했기 떄문에 MonoBehaviour를 상속받아 구현했다. 꼭 클래스로 만들 필요는 없지만 필자는 예제의 이해를 돕기위해 다음과 같이 구현했다.
@@ -85,7 +86,6 @@ public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
     }
 }
 ```
-
 이제 주체가 될 Character를 만들고 입력을 받으면 Notify를 실행할 것이고 튜토리얼매니저와 업적매니저는 Notify를 받아 로그를 출력할 것이다.
 
 ### Character.cs
@@ -135,11 +135,14 @@ public class AchievementManager : IObservable<GameObject, string>
     }
 }
 ```
-
 구현하는 방법은 자신의 기호에 따라 바꾸면 된다. Character는 Start()에서 각각의 관찰자(업적매니저와 튜토리얼매니저)들을 등록한다. 그리고 입력(Space Bar)을 받으면 관찰자들에게 entity와 event를 Notify해준다. Notify를 받은 관찰자들은 각각의 로직을 수행하면 된다!
 
 
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;
+
+
 
 
 # 주의사항
@@ -149,18 +152,18 @@ public class AchievementManager : IObservable<GameObject, string>
 ### Dangling Poiter
 구현하는 방법에 따라 다르겠지만 C++로 작성할 때 관찰자들을 포인터로 들고있는 경우 관찰자를 부주의하게 삭제하는 경우 Dangling Pointer가 발생할 수 있다.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### 관찰자의 대기
 관찰자가 주체의 이벤트를 기다리고 있어야하는 경우가 있을 것이다.(사실 이런경우는 관찰자 패턴은 어울리지 않는다고 생각함) 이 때, 주체를 삭제한다면 관찰자는 주체의 메세지를 계속해서 기다리게 될 것이다. 이는 주체가 삭제될 때 삭제 이벤트를 전송하고 그에 맞는 로직을 구현해서 해결할 수 있다.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### 사라진 리스너 문제
 관찰자를 제대로 삭제해주지 않는 경우이다. GC를 탑재하고 있는 언어에서 알림 시스템을 개발하는 경우 빈번히 발생하는 문제이다. 주체가 관찰자들을 등록해서 레퍼런스를 물고있는데 관찰자를 등록취소없이 오브젝트를 삭제한다면 실제 객체는 GC가 수거해갈 수 없다. 따라서 메모리 누수가 발생할 것이고 또 등록되어있는 만큼 cpu 낭비가 발생할 것이며 같은 관찰자를 등록할 때 마다 사용되지는 않으면서 중복으로 등록이 될 것이다.
 
 
+
 &nbsp;&nbsp;&nbsp;&nbsp;
+
 
 
 # 한계점과 해결법
@@ -171,7 +174,7 @@ public class AchievementManager : IObservable<GameObject, string>
 주체가 Notify를 할 때에는 자신에게 등록된 관찰자들의 OnNotify를 하나씩 호출하게 된다. 여기서 만약 한 관찰자가 Notify를 받았을 경우 상당한 양의 로직을 수행하는 경우 이 코드는 Block 될 것이다.
 문제되지 않을 것 처럼 보이지만 코드들이 서로 디커플링되어있고 결합도가 낮아 신경쓰지 않아도 된다면 충분히 실수할 수 있는 부분이라고 본다.
 
-##### 해결법
+#### 해결법
 당연 Blocking Code를 해결하는 방법은 NonBlock Code로 변경하는 것이다. 그렇기 위해서는 Thread를 사용하거나 Event Queue에 담아서 사용하면 된다. 단 당연하지만 MultiThread와 Lock을 사용할 경우에는 교착상태에 빠지지 않도록 주의해야한다
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -180,10 +183,10 @@ public class AchievementManager : IObservable<GameObject, string>
 GC가 탑재되어있는 언어에서 제공되는 컬렉션(리스트 혹은 해쉬 등)을 사용하면 Add, Remove 시 내부적으로 메모리 할당에 관여되도록 되어있다. Object Pool Post에서 해당하는 내용을 다루고 있다. 사실 큰 문제는 아니지만 이를 최소화한다면 더 나은 성능이 될 것이다.
 예제는 C#으로 구현되었는데 주체에서는 관찰자를 System.Collection.Generic에서 제공되는 List<T>를 사용하고 있다. 많은 양의 동적할당을 하는 것은 아니지만 최적을 위해 개선해보겠다.
 
-##### 해결법
+#### 해결법
 C#에서 제공되는 컬렉션을 사용하지 않고 Linked List로 바꿔서 만들어보겠다.
 
-###### Observable.cs를 interface에서 class로 변환
+#### Observable.cs를 interface에서 class로 변환
 class로 변환하고 nextObserver를 레퍼런스로 들고있게 한다.
 ```
 public abstract class Observable<ObjectType,EventType>
@@ -194,7 +197,7 @@ public abstract class Observable<ObjectType,EventType>
 }
 ```
 
-###### ObserverMonoBehaviour.cs에서는 List<T> 대신 LinkedList의 head로 변환
+#### ObserverMonoBehaviour.cs에서는 List<T> 대신 LinkedList의 head로 변환
 head만 들고있고 Add할 시 레퍼런스를 연결해준다. 속도를 위해 가장 앞에 연결해준다. 제거할때는 순회하여 제거한다.
 ```
 public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
@@ -270,7 +273,10 @@ public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
 
 
 
+
 &nbsp;&nbsp;&nbsp;&nbsp;
+
+
 
 # 더 나은 방법
 ---
@@ -337,7 +343,10 @@ public class Character : MonoBehaviour
 
 
 
+
 &nbsp;&nbsp;&nbsp;&nbsp;
+
+
 
 # 개인적인 의견
 ---
