@@ -29,7 +29,7 @@ description: Observer Pattern의 소개와 사용법 및 이점
 ---
 캐릭터가 점프 입력(Space Bar)를 받았을 경우에 튜토리얼매니저와 업적매니저가 각각 상태를 업데이트하는 예제를 만들어보겠다. 본 예제는 Unity로 작성했고 Unity 특성에 맞게 구성했다. 이 글을 참고하여 관찰자 패턴을 구현하는 경우 본인의 개발환경에 맞게 재구성하면 된다.
 
-먼저 관찰자 패턴의 틀을 구성하자! 
+먼저 관찰자 패턴의 틀을 구성하자!
 
 ### IObservable.cs
 관찰자가 구현할 interface이다. C#으로 구현했기 떄문에 Generic을 사용하여 전달할 파라미터에 entity와 event를 다음과 같이 구성했다.
@@ -76,7 +76,7 @@ public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
             observerList.Add(removeObserver);
         }
     }
-    
+
     protected void Notify(ObjectType entity, EventType notiEvent)
     {
         foreach(var observer in observerList)
@@ -98,7 +98,7 @@ public class Character : ObserverMonoBehaviour<GameObject, string>
         AddObserver(TutorialManager.Instance);
         AddObserver(AchievementManager.Instance);
     }
-	
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -115,7 +115,7 @@ public class Character : ObserverMonoBehaviour<GameObject, string>
 public class TutorialManager : IObservable<GameObject, string>
 {
     public static TutorialManager Instance = new TutorialManager();
-    
+
     public void OnNotify(GameObject entity, string notiEvent)
     {
         Debug.Log(entity.name + notiEvent);
@@ -128,7 +128,7 @@ public class TutorialManager : IObservable<GameObject, string>
 public class AchievementManager : IObservable<GameObject, string>
 {
     public static AchievementManager Instance = new AchievementManager();
-    
+
     public void OnNotify(GameObject entity, string notiEvent)
     {
         Debug.Log(entity.name + notiEvent);
@@ -216,7 +216,7 @@ public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
             head = newObserver;
         }
     }
-    
+
     public void RemoveObserver(Observable<ObjectType, EventType> removeObserver)
     {
         if(head == null || removeObserver == null)
@@ -256,7 +256,7 @@ public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
 
         currentObserver.nextObserver = nextnextObserver;
     }
-    
+
     protected void Notify(ObjectType entity, EventType notiEvent)
     {
         Observable<ObjectType, EventType> current = head;
@@ -288,7 +288,7 @@ public class ObserverMonoBehaviour<ObjectType, EventType> : MonoBehaviour
 public class AchievementManager
 {
     public static AchievementManager Instance = new AchievementManager();
-    
+
     public void OnNotify(GameObject entity, string notiEvent)
     {
         Debug.Log(entity.name + notiEvent);
@@ -301,7 +301,7 @@ public class AchievementManager
 public class TutorialManager
 {
     public static TutorialManager Instance = new TutorialManager();
-    
+
     public void OnNotify(GameObject entity, string notiEvent)
     {
         Debug.Log(entity.name + notiEvent);
@@ -315,7 +315,7 @@ public class Character : MonoBehaviour
 {
     public delegate void SomeEvent(GameObject entity, string notiEvent);
     private event SomeEvent OnEvent;
-    
+
     void Start()
     {
         OnEvent += TutorialManager.Instance.OnNotify;
@@ -350,8 +350,13 @@ public class Character : MonoBehaviour
 
 # 개인적인 의견
 ---
-이 포스팅에서는 관찰자 패턴을 소개하고 구현 방법을 설명했다. 결국 현재의 프로그래밍 언어들의 기능과 새로운 프로그래밍 패러다임들이 이러한 노력없이 쉽게 관찰자 패턴이 스며드는 코딩을 할 수 있도록 설계되긴 헀지만 관찰자 패턴을 이해있다면 나중에 더 좋은 설계에 사용할 수 있을 것이라 생각한다. 위에서 여러가지 용어를 덧붙여 설명했지만 중요한건 최종 결론에서 설명한 핵심 2가지를 지킨다면 어떻게 구현해도 상관없다고 생각한다. 
+이 포스팅에서는 관찰자 패턴을 소개하고 구현 방법을 설명했다. 결국 현재의 프로그래밍 언어들의 기능과 새로운 프로그래밍 패러다임들이 이러한 노력없이 쉽게 관찰자 패턴이 스며드는 코딩을 할 수 있도록 설계되긴 헀지만 관찰자 패턴을 이해있다면 나중에 더 좋은 설계에 사용할 수 있을 것이라 생각한다. 위에서 여러가지 용어를 덧붙여 설명했지만 중요한건 최종 결론에서 설명한 핵심 2가지를 지킨다면 어떻게 구현해도 상관없다고 생각한다.
 
 실제로 1:1 매칭되는 관계에 관찰자만 변경되는 관찰자 패턴을 도입한 경우도 봤다. 그러한 경우에 굳이 관찰자들을 리스트로 들고 있을 필요가 없을 것이며 이벤트를 딱히 지정하지 않아도 구현이 가능할 것이다. 관찰자 패턴의 핵심 2가지를 잘 지키고 있기에 다른 개발 시간이나 개발 자원을 투자하지 않고도 충분히 잘 동작하는 코드였다. 다른 디자인 패턴들과 같이 구현이나 용어는 패턴의 핵심을 도우는 도구인 것 같다. 이번 포스팅도 같은 개념으로 접근했으면 좋겠다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+##### [예제 저장소는 이 링크에서 확인!][link]
+
+[link]: https://github.com/kimheetae90/ObserverPattern

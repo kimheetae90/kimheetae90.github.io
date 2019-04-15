@@ -65,7 +65,7 @@ public class BlockManager : MonoBehaviour {
     public static BlockManager Instance;
 
     public Character SelectedCharacter { get; private set; }
-    
+
     public void Awake()
     {
         Instance = this;
@@ -134,7 +134,7 @@ public class BlockManager : MonoBehaviour {
 ---
 이 때 도입할 수 있는 방법이 Command Pattern이다. 위키백과에서 Command Pattern은 명령(command), 수신자(receiver), 발동자(invoker), 클라이언트(client) 라는 용어로 구분할 수 있다고 설명하고 있다. 하지만 나는 Command를 캡슐화 한다는 규칙만 적용한다면 이 네 개를 모두 구현할 필요가 없이 더 자유롭게 사용할 수 있다고 생각한다.
 
-먼저 Command의 형태를 보면 다음과 같다. 
+먼저 Command의 형태를 보면 다음과 같다.
 ### ICommand.cs
 ```
 public interface ICommand
@@ -215,7 +215,7 @@ public class MoveCommand : ICommand {
         int opposition = ((int)direction + 2) % (int)Direction.Max;
         character.Move((Direction)opposition);
     }
-    
+
     public void Redo()
     {
         character.Move(direction);
@@ -316,12 +316,12 @@ public class CommandManager : MonoBehaviour
     {
         if (undoStack.Count <= 0)
             return;
-        
+
         ICommand redoCommand = undoStack.Pop();
         redoCommand.Redo();
         commandStack.Push(redoCommand);
     }
-    
+
     void ClearUnDoStack()
     {
         if(undoStack.Count > 0)
@@ -350,7 +350,7 @@ public class CommandManager : MonoBehaviour
     }
 }
 ```
-다음과 같이 작성한다면 Input을 할 때 마다 그 것에 맞는 Command를 생성할 것이고 그 Command를 Execute 할 것이다. 또 Command를 발동한 History를 Stack으로 남긴다면 Undo기능을 만들수도 있다. 위 코드는 Redo코드까지 작성했다. 
+다음과 같이 작성한다면 Input을 할 때 마다 그 것에 맞는 Command를 생성할 것이고 그 Command를 Execute 할 것이다. 또 Command를 발동한 History를 Stack으로 남긴다면 Undo기능을 만들수도 있다. 위 코드는 Redo코드까지 작성했다.
 &nbsp;
 나는 위와 같은 구조로 작성했지만 더 좋은 방법으로 Invoker를 작성할 수도 있다. 예를 들면 Input과 실행될 Command의 종류를 Dictionary로 관리하여 간단한 키 맵핑 기능을 만든다던가, 이미 사용되었던 Command를 Caching해서 성능을 향상시키는 등의 코드를 작성할 수 있다. 이 포스트에서는 다루지 않겠다.
 
@@ -358,7 +358,7 @@ public class CommandManager : MonoBehaviour
 &nbsp;&nbsp;&nbsp;&nbsp;
 # 생각되는 문제점
 ---
-Command Pattern은 명령을 추상화하여 각 기능끼리 디커플링하고 관리자와 떨어뜨려 제작하는 방법이기에 결국엔 Event와 유사하게 Invoke되는 방식이다. 
+Command Pattern은 명령을 추상화하여 각 기능끼리 디커플링하고 관리자와 떨어뜨려 제작하는 방법이기에 결국엔 Event와 유사하게 Invoke되는 방식이다.
 * 이 때 주의할 점은 Invoke된 Command(A)에서 또 다른 Command(B)를 Invoke하고 다시 기존의 Command(A)를 Invoke하는 경우가 생길 수 도 있다. 다음과 같은 경우엔 무한루프로 이어지게 된다.
 * 또, Command 클래스에서 기능 수행에 필요한 객체의 레퍼런스를 Caching해서 사용하는데 이 때 실제 객체가 사라지고 나서 기능이 수행된다면 NullReference가 발생할 것이다. 이 상황에 대한 예외처리도 대비해야 할 것이다.
 * 그리고 GC를 탑재하고 있는 언어의 경우에서는 사용이 완료된 Command를 제대로 정리하지 않는다면 Command 클래스에서 사용할 때 Caching한 Reference에 대해서는 GC가 수거해가지 않을 것이기 때문에 메모리누수가 발생할 수 있다.
@@ -370,3 +370,10 @@ Command Pattern은 명령을 추상화하여 각 기능끼리 디커플링하고
 # 결론
 ---
 물론 처음의 코드가 직관적이고 코드가 짧고 가독성이 좋고 간결할 수 있다. 하지만 Command Pattern을 사용한다면 작업자들끼리 분할하여 일을 할 수 있고 Undo기능, 나아가 Redo기능까지 손쉽게 개발할 수 있다. 특히 Tool을 제작할 때 강력하게 작용할 것이다.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+##### [예제 저장소는 이 링크에서 확인!][link]
+
+[link]: https://github.com/kimheetae90/CommandPattern
