@@ -89,9 +89,134 @@ Reactive Programming은 비동기적 데이터흐름을 처리하는 프로그�
 
 Reactive Programming에는 Data Stream이라는 개념이 존재한다. 이는 말그대로 데이터가 흐르는 관을 의미하고 발생하는 Event들을 시간 순으로 나열한 것이다. 이 Data Stream을 듣고있는 것을 Subscribing(구독)이라고 하고 Data Stream은 값, 에러 신호완료를 Emit(발생)시킬 수 있다.
 
+다음 예시는 C#에서 구현되는 Observer Pattern의 예시이다. 더 자세한 내용은 관찰자 패턴 포스팅을 참조할 것!
+
+##### 주체
 ```
-예시 달기
+public class Subject : IObservable<Event>
+{
+    private List<IObserver<Event>> observers;
+
+    public Subject()
+    {
+        observers = new List<IObserver<Event>>();
+    }
+
+    public IDisposable Subscribe(IObserver<Event> observer)
+    {
+        if (!observers.Contains(observer))
+            observers.Add(observer);
+        return new Unsubscriber(observers, observer);
+    }
+
+    public class Unsubscriber : IDisposable
+    {
+        private List<IObserver<Event>> _observers;
+        private IObserver<Event> _observer;
+
+        public Unsubscriber(List<IObserver<Event>> observers, IObserver<Event> observer)
+        {
+            this._observers = observers;
+            this._observer = observer;
+        }
+
+        public void Dispose()
+        {
+            if (!(_observer == null)) _observers.Remove(_observer);
+        }
+    }
+
+    public void Send(Event value)
+    {
+        foreach(var observer in observers)
+        {
+            if (value == null)
+                observer.OnError(new EventError());
+            else
+                observer.OnNext(value);
+        }
+    }
+
+    public void Dispose()
+    {
+        foreach (var observer in observers.ToArray())
+            if (observers.Contains(observer))
+                observer.OnCompleted();
+
+        observers.Clear();
+    }
+}
+
+public class EventError : Exception
+{
+    internal EventError() { }
+}
 ```
+
+##### 관찰자
+```
+public class Observer : IObserver<Event>
+{
+    private IDisposable unsubscriber;
+    private int id;
+
+    public Observer(int id)
+    {
+        this.id = id;
+    }
+
+    public void OnCompleted()
+    {
+        Console.WriteLine("구독 끝!");
+    }
+
+    public void OnError(Exception error)
+    {
+        Console.WriteLine("에러");
+    }
+
+    public void OnNext(Event value)
+    {
+        Console.WriteLine(id + " get value " + value.arg);
+    }
+
+    public void Subscribe(IObservable<Event> provider)
+    {
+        unsubscriber = provider.Subscribe(this);
+    }
+
+    public void Unsubscribe()
+    {
+        unsubscriber.Dispose();
+    }
+}
+```
+
+##### Event
+```
+public class Event
+{
+    public string arg;
+    public Event(string arg)
+    {
+        this.arg = arg;
+    }
+}
+```
+
+```
+Subject subject = new Subject();
+
+Observer observer1 = new Observer(1);
+Observer observer2 = new Observer(2);
+
+observer1.Subscribe(subject);
+observer2.Subscribe(subject);
+
+subject.Send(new Event("New Event!"));
+subject.Dispose();
+```
+
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
