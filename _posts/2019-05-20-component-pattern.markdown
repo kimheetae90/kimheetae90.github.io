@@ -276,6 +276,6 @@ Unity는 Component Pattern을 잘 반영했다. GameObject라는 객체에 Compo
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### React.js
-최근 웹개발에 흥미가 생겨서 React를 간단히 공부했었다. 구조가 Unity와 약간 유사하다는점이 흥미로웠다(나중에 Unity 개발자가 React를 익히는 법에 대해서도 포스팅할 기회가 생기게 된다면 포스팅하고 싶다). React에서도 React.Component를 상속받아 클래스를 만들고 DOM에 뿌려주는 방식이었다. 한가지 특이한 점은 데이터 관리를 prop과 state로 한다는 점이었는데 앞서 설명한 '객체의 상태를 변경'과 '메시징'을 혼합한 것 처럼 보였다. 
+최근 웹개발에 흥미가 생겨서 React를 간단히 공부했었다. 구조가 Unity와 약간 유사하다는점이 흥미로웠다(나중에 Unity 개발자가 React를 익히는 법에 대해서도 포스팅할 기회가 생기게 된다면 포스팅하고 싶다). React에서도 React.Component를 상속받아 클래스를 만들고 DOM에 뿌려주는 방식이었다. 한가지 특이한 점은 데이터 관리를 prop과 state로 한다는 점이었는데 이 떄 Redux라는 것을 사용하면 state를 store라는 곳에 보관하면서 event방식으로 사용할 수 있었다. 앞서 설명한 '객체의 상태를 변경'과 '메시징'을 혼합한 것 처럼 보였다. 
 
 ---
