@@ -88,36 +88,11 @@ private :
 ```
 class Memory
 {
-private :
+public :
 	int number1;
 	int number2;
 	char operation;
-
-public :
 	int result;
-
-public:
-	void SetData(int inputNumber1, int inputNumber2, char inputOperation)
-	{
-		number1 = inputNumber1;
-		number2 = inputNumber2;
-		operation = inputOperation;
-	}
-
-	int GetNumber1()
-	{
-		return number1;
-	}
-
-	int GetNumber2()
-	{
-		return number2;
-	}
-
-	char GetOperation()
-	{
-		return operation;
-	}
 };
 ```
 통짜 클래스에서 private에서 변수를 저장하고 있는 부분을 Memory라는 Component로 분류했다.
@@ -129,13 +104,9 @@ class Keyboard
 public:
 	void Input(Memory& memory)
 	{
-		int number1, number2;
-		char operation;
-		cin >> number1;
-		cin >> operation;
-		cin >> number2;
-
-		memory.SetData(number1, number2, operation);
+		cin >> memory.number1;
+		cin >> memory.operation;
+		cin >> memory.number2;
 	}
 };
 ```
@@ -148,10 +119,10 @@ class CPU
 public:
 	void Compute(Memory& memory)
 	{
-		int number1 = memory.GetNumber1();
-		int number2 = memory.GetNumber2();
+		int number1 = memory.number1
+		int number2 = memory.number2
 		int result = 0;
-		switch (memory.GetOperation())
+		switch (memory.operation)
 		{
 		case '+':
 			result = number1 + number2;
@@ -183,7 +154,7 @@ class Monitor
 public :
 	void Print(Memory& memory)
 	{
-		cout << memory.GetNumber1() << memory.GetOperation() << memory.GetNumber2() << "=" << memory.result;
+		cout << memory.number1 << memory.operation << memory.number2 << "=" << memory.result;
 
 	}
 };
