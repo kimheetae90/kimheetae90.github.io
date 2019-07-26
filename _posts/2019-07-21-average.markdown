@@ -21,7 +21,7 @@ description: 평균을 구하는 방법들을 알아보자
 ### 공식
 주어진 모든 수의 합을 모든 수의 갯수로 나눈 값이다.
 
-![산술 평균](/assets/images/post/2019-07-21-Average/2019-07-21-ArithmeticMean.png)
+![산술 평균](/assets/images/post/2019-07-21-Average/2019-07-21-ArithmeticMean.jpg)
 
 
 ### 용도
@@ -36,7 +36,7 @@ description: 평균을 구하는 방법들을 알아보자
 ### 공식
 주어진 모든 수의 양수 값을 곱한 것의 N제곱근이다.(N은 수의 갯수)
 
-![기하 평균](/assets/images/post/2019-07-21-Average/2019-07-21-GeometricMean.png)
+![기하 평균](/assets/images/post/2019-07-21-Average/2019-07-21-GeometricMean.jpg)
 
 
 ### 용도
@@ -52,7 +52,7 @@ description: 평균을 구하는 방법들을 알아보자
 ---
 ### 공식
 주어진 모든 수의 역수의 산술평균의 역수이다.
-![조화 평균](/assets/images/post/2019-07-21-Average/2019-07-21-HarmonicMean.png)
+![조화 평균](/assets/images/post/2019-07-21-Average/2019-07-21-HarmonicMean.jpg)
 
 ### 용도
 주로 평균진동수, 평균속도 등 분모를 시간으로 갖는 값의 평균을 구할 때 사용한다. 사용하는 경우가 많지 않지만 극단적인 값에 영향을 많이 받지 않고 좀더 정확한 평균값을 구해준다. 조화로운 음을 찾는다 하여 조화평균이라 하는데 현악기에서 현의 길이에 따라 맞는 음을 찾을 때 사용되어서 붙여진 이름이라 한다.
@@ -64,7 +64,7 @@ description: 평균을 구하는 방법들을 알아보자
 # 평균 FPS 구하기
 FPS는 시간당 Framerate이기때문에 조화평균이 적절해보인다. 따라서 조화평균을 사용해서 평균 FPS를 구해보고 렌더링이 적은 부분과 렌더링이 많은 부분을 만들어서 테스트해봤다.
 
-![Level 수정](/assets/images/post/2019-07-21-Average/2019-07-21-LevelScriptActor.png)
+![Level 수정](/assets/images/post/2019-07-21-Average/2019-07-21-LevelScriptActor.jpg)
 
 먼저 Tick을 돌면서 계산해야하기 때문에 코드를 수정할 LevelScriptActor를 만들고 내가 만든 LevelScriptActor가 세팅되게 수정했다.
 
