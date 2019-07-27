@@ -1,33 +1,42 @@
 ---
 layout: default
+current: tag
+title: Tag Page
+cover: false
+class: 'tag-template'
+navigation: True
+logo: 'assets/images/ghost.png'
 ---
-<section class="mast section-padding--double">
-  <div class="grid">
-    <h2>
-      {{ page.autopages.display_name }}
-    </h2>
-  </div>
-</section>
 
-<div class="section-padding--none">
-  <div class="grid-large">
-    <hr class="sep"/>
-  </div>
-</div>
+<!-- default -->
+<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
+
+<!-- The big featured header, it uses blog cover image as a BG if available -->
+<!-- #tag -->
+{% include dynamic_tag_info.html %}
+<header class="site-header outer {% if cover or page.cover %}" style="background-image: url({{ site.baseurl }}{% if cover %}{{ cover }}{% else %}{{ page.cover }}{% endif%}) {% else %}no-cover{% endif %}">
+    <div class="inner">
+        {% include site-nav.html %}
+        <div class="site-header-content">
+            <h1 class="site-title">{{ page.tag | capitalizeall }}</h1>
+            <h2 class="site-description">
+                {% if tag_description %}
+                    {{ tag_description }}
+                {% elsif page.tag %}
+    			    A collection of {{ paginator.total_posts }} posts
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+</header>
+<!-- tag -->
 
 <!-- The main content area -->
-<div class="posts">
-  <div class="grid-xlarge">
-    <div class="posts__container" itemscope itemtype="http://schema.org/Blog" data-columns>
-
-      {% for post in paginator.posts %}
-
-        <!-- The tag below includes the markup for each post - partials/post-card.html -->
-        {% include post-card.html %}
-
-      {% endfor %}
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <div class="post-feed">
+            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+            {%  include post-card.html %}
+        </div>
     </div>
-  </div>
-
-  {% include pagination.html %}
-</div>
+</main>

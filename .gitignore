@@ -1,8 +1,31 @@
-.env
+# OS X
 .DS_Store
-.s3-website.json
-node_modules/
 
-_site
-.sass-cache
+# Jekyll build
+/_site/
 .jekyll-metadata
+#Gemfile.lock
+
+# webstorm
+.idea/
+
+# others
+*.swp
+
+# site build
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+vendor
+Gemfile.lock
+node_modules

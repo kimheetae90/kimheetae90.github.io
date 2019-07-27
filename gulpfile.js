@@ -1,85 +1,70 @@
-const gulp = require('gulp');
-const autoprefixer = require('gulp-autoprefixer');
-const browserify = require('browserify');
-const buffer = require('vinyl-buffer');
-const cleanCSS = require('gulp-clean-css');
-const eslint = require('gulp-eslint');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
-const source = require('vinyl-source-stream');
-const stylelint = require('gulp-stylelint');
-const uglify = require('gulp-uglify');
-const zip = require('gulp-zip');
+var gulp = require('gulp');
 
-function lintStyles() {
-  return gulp.src([
-    './_assets/scss/**/*.scss',
-    '!./_assets/scss/vendor/_normalize.scss',
-    '!./_assets/scss/fonts/*.scss'
-  ])
-    .pipe(stylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
-}
+// gulp plugins and utils
+var gutil = require('gulp-util');
+var livereload = require('gulp-livereload');
+var nodemon = require('gulp-nodemon');
+var postcss = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var zip = require('gulp-zip');
 
-function styles() {
-  return gulp.src('./_assets/scss/app.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({cascade: false}))
-    .pipe(cleanCSS())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('./assets/css'));
-}
+// postcss plugins
+var autoprefixer = require('autoprefixer');
+var colorFunction = require('postcss-color-function');
+var cssnano = require('cssnano');
+var customProperties = require('postcss-custom-properties');
+var easyimport = require('postcss-easy-import');
 
-function lint() {
-  return gulp.src([
-    './_assets/js/components/_formcarry.js',
-    './_assets/js/components/_infiniteScroll.js',
-    './_assets/js/components/_mailChimp.js',
-    './_assets/js/components/_miscellaneous.js',
-    './_assets/js/components/_pageTransition.js',
-    './_assets/js/components/_popup.js',
-    './_assets/js/_inits.js'
-  ])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-}
+var swallowError = function swallowError(error) {
+    gutil.log(error.toString());
+    gutil.beep();
+    this.emit('end');
+};
 
-function scripts() {
-  return browserify('./_assets/js/app.js')
-    .transform('babelify', {presets: ['@babel/preset-env']})
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('./assets/js'));
-}
+var nodemonServerInit = function () {
+    livereload.listen(1234);
+};
 
-function dist() {
-  return gulp.src([
-    './**',
-    '!./.DS_Store',
-    '!./.git',
-    '!./node_modules/**'
-  ])
-    .pipe(zip('barber-jekyll.zip'))
-    .pipe(gulp.dest('../'))
-}
+gulp.task('build', ['css'], function (/* cb */) {
+    return nodemonServerInit();
+});
 
-function watch() {
-  gulp.watch('./_assets/scss/**/*.scss', styles);
-  gulp.watch('./_assets/js/**/*.js', scripts);
-}
+gulp.task('css', function () {
+    var processors = [
+        easyimport,
+        customProperties,
+        colorFunction(),
+        autoprefixer({browsers: ['last 2 versions']}),
+        cssnano()
+    ];
 
-const build = gulp.series(styles, scripts, watch);
-gulp.task('default', build);
+    return gulp.src('assets/css/*.css')
+        .on('error', swallowError)
+        .pipe(sourcemaps.init())
+        .pipe(postcss(processors))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('assets/built/'))
+        .pipe(livereload());
+});
 
-exports.lintStyles = lintStyles;
-exports.styles = styles;
-exports.lint = lint;
-exports.scripts = scripts;
-exports.dist = dist;
+gulp.task('watch', function () {
+    gulp.watch('assets/css/**', ['css']);
+});
+
+gulp.task('zip', ['css'], function() {
+    var targetDir = 'dist/';
+    var themeName = require('./package.json').name;
+    var filename = themeName + '.zip';
+
+    return gulp.src([
+        '**',
+        '!node_modules', '!node_modules/**',
+        '!dist', '!dist/**'
+    ])
+        .pipe(zip(filename))
+        .pipe(gulp.dest(targetDir));
+});
+
+gulp.task('default', ['build'], function () {
+    gulp.start('watch');
+});

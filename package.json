@@ -1,56 +1,54 @@
 {
-  "name": "barber-jekyll",
-  "description": "Barber is a blog theme for Jekyll built by Thomas Vaeth at Samesies using HTML, Sass, and JavaScript.",
-  "demo": "http://barber.samesies.io",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "bundle exec jekyll serve",
-    "build": "bundle exec jekyll build",
-    "deploy": "gulp build && bundle exec jekyll build && s3-website deploy _site",
-    "gulp": "gulp"
-  },
-  "author": {
-    "name": "Samesies",
-    "email": "okay@samesies.io",
-    "url": "http://samesies.io"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/samesies/barber-jekyll.git"
-  },
-  "bugs": "https://github.com/samesies/barber-jekyll/issues",
-  "keywords": [
-    "barber",
-    "jekyll",
-    "blog",
-    "theme"
-  ],
-  "dependencies": {
-    "aos": "^2.3.4",
-    "jquery": "^3.4.1",
-    "salvattore": "^1.0.9"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.3",
-    "eslint": "^5.16.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-eslint": "^5.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-stylelint": "^9.0.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.0",
-    "s3-website": "^3.3.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-recommended": "^2.2.0",
-    "stylelint-config-standard": "^18.3.0",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "license": "MIT"
+    "name": "casper",
+    "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+    "demo": "https://demo.ghost.io",
+    "version": "2.1.9",
+    "engines": {
+        "ghost": ">=1.2.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Ghost Foundation",
+        "email": "hello@ghost.org",
+        "url": "https://ghost.org"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TryGhost/Casper.git"
+    },
+    "bugs": "https://github.com/TryGhost/Casper/issues",
+    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "devDependencies": {
+        "autoprefixer": "6.3.6",
+        "cssnano": "3.7.1",
+        "gulp": "3.9.1",
+        "gulp-livereload": "3.8.1",
+        "gulp-nodemon": "2.1.0",
+        "gulp-postcss": "6.1.1",
+        "gulp-sourcemaps": "1.6.0",
+        "gulp-util": "3.0.7",
+        "gulp-watch": "4.3.8",
+        "gulp-zip": "4.0.0",
+        "postcss-color-function": "2.0.1",
+        "postcss-custom-properties": "5.0.1",
+        "postcss-easy-import": "1.0.1"
+    },
+    "config": {
+        "posts_per_page": 25
+    }
 }
