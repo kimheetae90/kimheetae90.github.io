@@ -1,31 +1,27 @@
-# OS X
+# Idea files
+.idea/*
+
+# Mac files
 .DS_Store
 
-# Jekyll build
-/_site/
-.jekyll-metadata
-#Gemfile.lock
+# Byte-compiled / optimized / DLL files
+*.manifest
+*.spec
 
-# webstorm
-.idea/
+# Jekyll dev or build files
+_site/*
+_development_tool/*
+.sass-cache/*
+*.css.map
+*.scssc
 
-# others
-*.swp
-
-# site build
-*.gem
-*.rbc
-.bundle
-.config
-coverage
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-vendor
+# Theme Gem files
 Gemfile.lock
-node_modules
+*.gem
+.gems
+jekyll-theme-type-on-strap.gemspec
+
+# Node js files
+**/node_modules/*
+*-test.md
+*copy.md
