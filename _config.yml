@@ -52,7 +52,7 @@ autopages:
   collections:
     enabled: false
   tags:
-    layouts: 
+    layout: 
       - 'tag.html'
     title: 'Kimi's Blog
     permalink: '/tag/:tag'
