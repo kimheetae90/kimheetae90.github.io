@@ -1,7 +1,7 @@
 # SITE CONFIGURATION
 baseurl: 
 url: https://kimheetae90.github.io
-title: Type on Strap # site's title
+title: Kimi's Blog!
 description: "A website with blog posts and pages" # used by search engines
 
 defaults:
@@ -19,21 +19,21 @@ theme_settings:
   favicon: assets/favicon.ico
 
   # Header and footer text
-  header_text: Change header text in <code>_config.yml</code>
+  header_text: Kimi's Blog!
   header_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
-    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+    Kimi's Blog about Game dev skill or IT Tech And Hobby!(Song...)
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: "kimheetae90@gmail.com"
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
   gitlab:
-  github: "sylhare"
+  github: "kimheetae90"
   google_plus:
   instagram:
   keybase:
@@ -93,13 +93,9 @@ paginate_path: "blog/page:num"
 # AUTHORS
 authors:
   mhagnumdw: # author-id
-    name: MhagnumDw
+    name: Kimi
     avatar: "assets/img/avatars/mhagnumdw_avatar.jpg"
     url: 
-  sylhare:
-    name: Sylhare
-    avatar: "assets/img/avatars/sylhare_avatar.png"
-    url: "https://github.com/sylhare"
 
 # PORTFOLIO
 collections:
