@@ -52,8 +52,8 @@ autopages:
   collections:
     enabled: false
   tags:
-    layouts: 
-      - '_layouts/tag.html'
+    layouts:
+      - 'tag.html'
     title: 'Kimi's Blog
     permalink: '/tag/:tag'
     slugify:
