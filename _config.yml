@@ -1,12 +1,11 @@
 # Site/SEO settings
-email: kimheetae90@gmail.com
+email: "kimheetae90@gmail.com"
 baseurl: ""
 #permalink: /:year/:month/:day/:title/
 #google_analytics: 
-name: Kim Heetae
-title: Kimi's Blog
-description: >
-  Blog about Game or IT Tech and kimi's hobbys(Song, Interior Design..)
+name: "Kim Heetae"
+title: "Kimi's Blog"
+description: "Blog about Game or IT Tech and kimi's hobbys(Song, Interior Design..)"
 url: http://kimheetae90.github.io
 #twitter_username: thomasvaeth
 default_img: /assets/images/default_img.jpg
@@ -31,8 +30,8 @@ disqus: test-apkdzgmqhj
 
 # Author settings
 author:
-  - name: Kimi
-    bio: Auth
+  - name: "Kimi"
+    bio: "Auth"
 
 # Pagination settings
 pagination:
