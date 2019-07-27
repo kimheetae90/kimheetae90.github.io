@@ -53,7 +53,7 @@ autopages:
   tags:
     layouts:
       - 'tag.html'
-    title: 'Kimi's Blog
+    title: Kimi's Blog
     permalink: '/tag/:tag'
     slugify:
       mode: raw
