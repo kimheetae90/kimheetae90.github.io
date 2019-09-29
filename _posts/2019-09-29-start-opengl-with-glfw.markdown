@@ -31,7 +31,7 @@ OpenGL은 Open Graphics Library의 약자이고 Computer Graphics 표준 API이�
 ## GLFW 다운로드
 https://www.glfw.org/download.html 
 
-![GLFW 다운로드](/assets/images/post/2019-09-29-OpenGL-GLFW/installGLFW.png)
+![GLFW 다운로드](/assets/images/post/2019-09-29-OpenGL-GLFW/installGLFW.jpg)
 
 해당 링크에 접속하여 Source package를 다운로드하고 압축을 푼다.
 
@@ -39,7 +39,7 @@ https://www.glfw.org/download.html
 ## CMake 다운로드
 http://www.cmake.org/cmake/resources/software.html
 
-![Cmake 다운로드](/assets/images/post/2019-09-29-OpenGL-GLFW/installCmake.png)
+![Cmake 다운로드](/assets/images/post/2019-09-29-OpenGL-GLFW/installCmake.jpg)
 
 그 다음은 이미 CMake가 설치되어있다면 스킵해도 좋다. CMake를 사용한 적이 없다면 해당 링크에 접속하여 CMake를 다운로드한 후 설치한다.
 
@@ -48,23 +48,23 @@ http://www.cmake.org/cmake/resources/software.html
 ## GLFW 소스 컴파일
 위에 두 개를 다운로드하고 설치했다면 다운로드한 GLFW를 컴파일해서 lib를 생성하면 된다. 
 
-![build 폴더 생성](/assets/images/post/2019-09-29-OpenGL-GLFW/makeBuildFolder.png)
+![build 폴더 생성](/assets/images/post/2019-09-29-OpenGL-GLFW/makeBuildFolder.jpg)
 
 컴파일하기 전에 GLFW 압축파일을 풀어서 생성된 폴더 안에 build라는 폴더를 하나 생성한다(꼭 build일 필요는 없지만 알아보기 쉽게 하기 위해)
 
-![경로설정](/assets/images/post/2019-09-29-OpenGL-GLFW/cmakepath.png)
+![경로설정](/assets/images/post/2019-09-29-OpenGL-GLFW/cmakepath.jpg)
 
 그 후 CMake를 실행해서 빌드될 source와 생성된 binary의 path를 설정해준다. source path는 압축해제한 GLFW폴더이고 생성된 binary를 둘 path는 새로 생성한 build 폴더이다
 
-![GLFW 프로젝트 생성](/assets/images/post/2019-09-29-OpenGL-GLFW/cmakeConfig.png)
+![GLFW 프로젝트 생성](/assets/images/post/2019-09-29-OpenGL-GLFW/cmakeConfig.jpg)
 
 설정이 완료되면 Configure 버튼을 누르는데 누르고 나면 라이브러리를 구성하기 위한 옵션을 보여줄 것이다. 그 때 그냥 기본값을 두고 Configure 버튼을 한번 더 누르면 설정을 저장할 수 있다.(프로젝트 생성기를 생성할때는 자신이 사용할 IDE에 맞게 선택한다)
 
-![GLFW 프로젝트 생성완료](/assets/images/post/2019-09-29-OpenGL-GLFW/glfwprojectinit.png)
+![GLFW 프로젝트 생성완료](/assets/images/post/2019-09-29-OpenGL-GLFW/glfwprojectinit.jpg)
 
 저장한 후 Generate 버튼을 눌러서 프로젝트 파일을 생성한다. 그럼 위와 같이 build 폴더에 프로젝트가 생성된다! 
 
-![라이브러리파일](/assets/images/post/2019-09-29-OpenGL-GLFW/glfw3lib.png)
+![라이브러리파일](/assets/images/post/2019-09-29-OpenGL-GLFW/glfw3lib.jpg)
 
 솔루션을 열어서 솔루션을 빌드한다. 그러면 src/Debug 폴더에 glfw3.lib라는 파일이 생성된다
 
@@ -75,24 +75,24 @@ http://www.cmake.org/cmake/resources/software.html
 
 이제 프로젝트를 생성한다. 우리는 위에서 생성한 라이브러리파일을 사용할 것인데 시스템에 위치시키던 프로젝트안에 위치시키던 본인이 편한 방식으로 세팅한다. 이 글에서는 프로젝트 안에 세팅할 것이다.
 
-![폴더생성1](/assets/images/post/2019-09-29-OpenGL-GLFW/libraryfolder.png)
+![폴더생성1](/assets/images/post/2019-09-29-OpenGL-GLFW/libraryfolder.jpg)
 
-![폴더생성2](/assets/images/post/2019-09-29-OpenGL-GLFW/libraryfolder2.png)
+![폴더생성2](/assets/images/post/2019-09-29-OpenGL-GLFW/libraryfolder2.jpg)
 
 프로젝트 안에 라이브러리를 둘 폴더를 생성하고 그안에 include와 library를 나눠서 배치할 수 있도록 폴더를 추가생성한다.
 
-![폴더생성2](/assets/images/post/2019-09-29-OpenGL-GLFW/glfwinclude.png)
+![폴더생성2](/assets/images/post/2019-09-29-OpenGL-GLFW/glfwinclude.jpg)
 
 위에서 생성된 lib를 lib를 배치하기 위해 만든 폴더에 배치하고 GLFW 내에 include 폴더 안에 있는 헤더들은 include 파일을 넣기 위한 폴더에 배치한다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 ## Linking
 
-![라이브러리 경로 설정](/assets/images/post/2019-09-29-OpenGL-GLFW/libpath.png)
+![라이브러리 경로 설정](/assets/images/post/2019-09-29-OpenGL-GLFW/libpath.jpg)
 
 프로젝트가 GLFW를 사용할 수 있도록 include와 library의 디렉토리를 알려주도록 한다.
 
-![라이브러리 경로 설정](/assets/images/post/2019-09-29-OpenGL-GLFW/liblinker.png)
+![라이브러리 경로 설정](/assets/images/post/2019-09-29-OpenGL-GLFW/liblinker.jpg)
 
 그리고 Linker에서 프로젝트와 lib를 연결해준다. 이 때 opengl32.lib도 연결해준다.
 
@@ -108,9 +108,9 @@ OpenGL 드라이버의 버전은 많기 때문에 대부분의 함수 위치는 
 
 https://glad.dav1d.de/
 
-![GLAD 다운로드 세팅1](/assets/images/post/2019-09-29-OpenGL-GLFW/glad.png)
+![GLAD 다운로드 세팅1](/assets/images/post/2019-09-29-OpenGL-GLFW/glad.jpg)
 
-![GLAD 다운로드 세팅2](/assets/images/post/2019-09-29-OpenGL-GLFW/glad2.png)
+![GLAD 다운로드 세팅2](/assets/images/post/2019-09-29-OpenGL-GLFW/glad2.jpg)
 
 위 경로로 접속하면 웹서비스가 나온다. 이 페이지에서 C++, 3.3이상의 OpenGL버전, 프로파일을 Core로 설정한 후 Generate a loader를 선택한 후에 Generate 버튼을 클릭한다.
 
