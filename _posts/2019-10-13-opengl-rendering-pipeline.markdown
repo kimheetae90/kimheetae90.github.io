@@ -13,6 +13,12 @@ author: heetaekim
 description: OpenGL Rendering Pipeline에 대해 알아보자!
 ---
 
+# Rendering Pipeline
+어떠한 데이터를 화면에 그리는 것을 Rendering이라고 한다. Graphics에서는 2D 혹은 3D 데이터를 화면에 그리게 되는데 이 때 일련의 과정을 거치게 된다. 이 것을 Rendering Pipeline이라고 한다.
+
+# OpenGL Rendering Pipeline
+각 Graphics Library마다 Rendering Pipeline이 있다. 대부분 유사하지만 약간의 차이가 있다. 필자는 이번에 OpenGL의 Rendering Pipeline에 대해서 알아보았다.
+
 ![Rendering Pipeline](/assets/images/post/2019-10-13-OpenGL-Rendering-Pipeline/pipeline.jpg)
 
 
