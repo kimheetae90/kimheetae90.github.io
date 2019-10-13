@@ -19,7 +19,7 @@ description: OpenGL Rendering Pipeline에 대해 알아보자!
 # OpenGL Rendering Pipeline
 각 Graphics Library마다 Rendering Pipeline이 있다. 대부분 유사하지만 약간의 차이가 있다. 필자는 이번에 OpenGL의 Rendering Pipeline에 대해서 알아보았다.
 
-![Rendering Pipeline](/assets/images/post/2019-10-13-OpenGL-Rendering-Pipeline/pipeline.jpg)
+![Rendering Pipeline](/assets/images/post/2019-10-13-OpenGL-RenderingPipeline/pipeline.jpg)
 
 
 # Vertex Specification
@@ -67,7 +67,7 @@ glEnableVertexAttribArray(0);
 
 EBO라는 인덱스 버퍼도 있지만 이 포스트에서는 다루지 않겠다. VAO와 VBO의 관계를 그림으로 나타내면 다음과 같다
 
-![VAO와 VBO](/assets/images/post/2019-10-13-OpenGL-Rendering-Pipeline/vaonvbo.jpg)
+![VAO와 VBO](/assets/images/post/2019-10-13-OpenGL-RenderingPipeline/vaonvbo.jpg)
 출처 : https://learnopengl.com/Getting-started/Hello-Triangle›
 
 위와 같이 전달받은 vertex data들은 다음 과정인 Vertex Processing을 통해 가공된다.
