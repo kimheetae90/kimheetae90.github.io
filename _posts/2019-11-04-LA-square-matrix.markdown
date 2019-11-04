@@ -32,18 +32,34 @@ Square Matrix는 N by N Matrix, 즉 행과 열의 갯수가 같은 Matrix로 선
 ----
 Diagonal Matrix는 Diagonal(주대각선)을 제외한 나머지 element들은 0인 Matrix를 지칭한다. 이 떄 Diagonal은 0일수도, 아닐수도 있다. 
 
-![Square Matrix Example](/assets/images/post/2019-11-04-Square-Matrix/SquareMatrix.jpg)
+$$
+ A = 
+ \begin{bmatrix} 
+ a_{1,1}  &  0  & \dots  & 0 \\
+ 0  &  a_{2,2}  & \dots  & 0 \\ 
+ \vdots   &  \vdots   & \ddots & \vdots \\ 
+ 0  &  0  & \dots  & a_{n,n} \\ 
+ \end{bmatrix} 
+ $$
 
 Diagonal Matrix의 특징은 다음과 같다.
-1. A와 B가 Diagonal Matrix라면 C = AB인 Matrix C는 Diagonal이다.
-2. A와 B가 Diagonal Matrix라면 C = AB = BA이다. 즉, 교환법칙이 성립한다.
-3. A가 Diagonal Matirx이고 B는 일반 Matrix라면 C = AB의 i번째 행은 B의 i번째 행에 A의 i,i 요소를 곱한 것 과 같다. 열을 계산할 때도 같다.
+
+**1. A와 B가 Diagonal Matrix라면 $ C = AB $인 Matrix C는 Diagonal이다.**
+
+**2. A와 B가 Diagonal Matrix라면 $ C = AB = BA $이다. 즉, 교환법칙이 성립한다.**
+
+**3. A가 Diagonal Matirx이고 B는 일반 Matrix라면 $ C = AB $ 의 i번째 행은 B의 i번째 행에 $ a_{i,i} $ 요소를 곱한 것 과 같다. 열을 계산할 때도 같다.**
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Scalar Matrix
 Diagonal Matrix중 Diagonal이 모두 같은 Matrix이다.
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+
 ### Identity Matrix
-Scalar Matrix 중 Diagonal이 모두 1인 Matrix이다. 단위행렬이라고 부른다. I라고 표기하고 Matrix 곱의 항등원이 된다. 즉, MI = IM = M 이다.
+Scalar Matrix 중 Diagonal이 모두 1인 Matrix이다. 단위행렬이라고 부른다. $ I $라고 표기하고 Matrix 곱의 항등원이 된다. 즉, $ MI = IM = M $ 이다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -51,11 +67,48 @@ Scalar Matrix 중 Diagonal이 모두 1인 Matrix이다. 단위행렬이라고 �
 ----
 Diagonal을 기준으로 아래 모든 요소가 0인 Matrix를 Upper Triangular Matrix라고 하고 아래가 모두 0인 Matrix를 Lower Triangular Matrix라고 한다. 그리고 여기서 Diagonal까지 0인 Matrix를 Strict Triangular Matrix라고 한다.
 
+$$
+ \begin{bmatrix} 
+ a_{1,1}  &  a_{1,2}  & \dots  & a_{1,n} \\
+ 0  &  a_{2,2}  & \dots  & a_{2,n} \\ 
+ \vdots   &  \vdots   & \ddots & \vdots \\ 
+ 0  &  0  & \dots  & a_{n,n} \\ 
+ \end{bmatrix} 
+ $$
+
+_Upper Triangular Matrix_
+
+ $$
+ \begin{bmatrix} 
+ a_{1,1}  &  0  & \dots  & 0 \\
+ a_{2,1}  &  a_{2,2}  & \dots  & 0 \\ 
+ \vdots   &  \vdots   & \ddots & \vdots \\ 
+ a_{n,1}  &  a_{n,2}  & \dots  & a_{n,n} \\ 
+ \end{bmatrix} 
+ $$
+
+_Lower Triangular Matrix_
+
+$$
+ \begin{bmatrix} 
+ 0  &  a_{1,2}  & \dots  & a_{1,n} \\
+ 0  &  0  & \dots  & a_{2,n} \\ 
+ \vdots   &  \vdots   & \ddots & \vdots \\ 
+ 0  &  0  & \dots  & 0 \\ 
+ \end{bmatrix} 
+ $$
+
+_Strict Triangular Matrix_
+
 Triangular Matrix의 성질은 다음과 같다.
-1. A와 B가 Lower Triangular Matrix라면 C = AB는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.
-2. A와 B가 Lower Triangular Matrix라면 C = A + B는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.
-3. A가 Invertible한 Lower Triangular Matrix라면 A의 역행렬도 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.
-4. Triangular Matrix의 Determinant는 Diagonal의 곱이다.
+
+**1. A와 B가 Lower Triangular Matrix라면 $ C = AB $는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
+
+**2. A와 B가 Lower Triangular Matrix라면 $ C = A + B $는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
+
+**3. A가 Invertible한 Lower Triangular Matrix라면 A의 역행렬도 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
+
+**4. Triangular Matrix의 Determinant는 Diagonal의 곱이다.**
 
 일반 Matrix를 Triangular Matrix들의 곱으로 나타내는 방법을 LU Decomposition이라고 한다.
 
