@@ -44,11 +44,11 @@ $$
 
 Diagonal Matrix의 특징은 다음과 같다.
 
-**1. A와 B가 Diagonal Matrix라면 $ C = AB $인 Matrix C는 Diagonal이다.**
+**1. A와 B가 Diagonal Matrix라면 $C = AB$인 Matrix C는 Diagonal이다.**
 
-**2. A와 B가 Diagonal Matrix라면 $ C = AB = BA $이다. 즉, 교환법칙이 성립한다.**
+**2. A와 B가 Diagonal Matrix라면 $C = AB = BA$이다. 즉, 교환법칙이 성립한다.**
 
-**3. A가 Diagonal Matirx이고 B는 일반 Matrix라면 $ C = AB $ 의 i번째 행은 B의 i번째 행에 $ a_{i,i} $ 요소를 곱한 것 과 같다. 열을 계산할 때도 같다.**
+**3. A가 Diagonal Matirx이고 B는 일반 Matrix라면 $C = AB$ 의 i번째 행은 B의 i번째 행에 $a_{i,i}$ 요소를 곱한 것 과 같다. 열을 계산할 때도 같다.**
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -59,7 +59,7 @@ Diagonal Matrix중 Diagonal이 모두 같은 Matrix이다.
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Identity Matrix
-Scalar Matrix 중 Diagonal이 모두 1인 Matrix이다. 단위행렬이라고 부른다. $ I $라고 표기하고 Matrix 곱의 항등원이 된다. 즉, $ MI = IM = M $ 이다.
+Scalar Matrix 중 Diagonal이 모두 1인 Matrix이다. 단위행렬이라고 부른다. $I$라고 표기하고 Matrix 곱의 항등원이 된다. 즉, $MI = IM = M$ 이다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -102,9 +102,9 @@ _Strict Triangular Matrix_
 
 Triangular Matrix의 성질은 다음과 같다.
 
-**1. A와 B가 Lower Triangular Matrix라면 $ C = AB $는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
+**1. A와 B가 Lower Triangular Matrix라면 $C = AB$는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
 
-**2. A와 B가 Lower Triangular Matrix라면 $ C = A + B $는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
+**2. A와 B가 Lower Triangular Matrix라면 $C = A + B$는 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
 
 **3. A가 Invertible한 Lower Triangular Matrix라면 A의 역행렬도 Lower Triangular Matrix이고 Upper인 경우도 마찬가지이다.**
 
