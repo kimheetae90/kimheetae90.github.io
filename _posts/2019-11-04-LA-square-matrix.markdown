@@ -1,5 +1,5 @@
 ﻿---
-title: "Square Matrix의 종류"
+title: "[Linear Algebra]Square Matrix의 종류"
 layout: post
 date: 2019-11-04 14:08
 image: /assets/images/markdown.jpg
@@ -15,7 +15,7 @@ description: Square Matrix 종류
 # Square Matrix
 ----
 
-![Square Matrix Example](/assets/images/post/2019-11-04-Square-Matrix/SquareMatrix.jpg)
+$$ M = \begin{bmatrix} a_{1,1} & a_{1,2} & \dots & a{1,n} \ a_{2,1} & a_{2,2} & \dots & a_{2,n} \ \vdots & \vdots & \ddots & \vdots \ a_{n,1} & a_{n,2} & \dots & a_{n,n} \ \end{bmatrix} $$
 
 Square Matrix는 N by N Matrix, 즉 행과 열의 갯수가 같은 Matrix로 선형대수에 있어서 중요한 요소이다. 왜냐하면 Linear System을 표현하거나 다루는 과정 혹은 해를 구할 때 주요 부분을 차지하기 때문이다. Graphics에서는 Square Matrix를 통해 Linear Transform 등 기하 정보를 표현한다. 이 포스팅에서는 몇가지 종류의 Square Matrix에 대해 알아보도록 하자.
 
