@@ -1,5 +1,5 @@
 ﻿---
-title: "[Linear Algebra]Square Matrix의 종류"
+title: "[Linear Algebra]Linear Space"
 layout: post
 date: 2019-11-04 14:08
 image: /assets/images/markdown.jpg
@@ -7,10 +7,11 @@ headerImage: false
 tag:
 - Graphics
 - Linear Algebra
-- Square Matrix
+- Linear Space
+- Linear Independence
 category: blog
 author: heetaekim
-description: Square Matrix 종류
+description: Linear Space
 ---
 # Linear Space
 ----
