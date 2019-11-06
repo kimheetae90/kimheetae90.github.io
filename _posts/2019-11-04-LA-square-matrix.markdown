@@ -11,6 +11,7 @@ tag:
 category: blog
 author: heetaekim
 description: Square Matrix 종류
+MathJax: true
 ---
 # Square Matrix
 ----
@@ -44,7 +45,7 @@ $$
 
 Diagonal Matrix의 특징은 다음과 같다.
 
-**1. A와 B가 Diagonal Matrix라면 $C = AB$인 Matrix C는 Diagonal이다.**
+**1. A와 B가 Diagonal Matrix라면** $C = AB$ **인 Matrix C는 Diagonal이다.**
 
 **2. A와 B가 Diagonal Matrix라면 $C = AB = BA$이다. 즉, 교환법칙이 성립한다.**
 
