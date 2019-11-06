@@ -31,8 +31,27 @@
 
     <!-- KaTeX 0.8.3 -->
     <!-- if you have any issue check https://github.com/KaTeX/KaTeX -->
-    {% if site.theme_settings.katex %}
+    <!-- {% if site.theme_settings.katex %}
     <script src="{{ '/assets/js/vendor/katex.min.js' | relative_url }}"></script>
+    {% endif %} -->
+
+    <!-- Import MathJax -->
+    {% if page.MathJax %}
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+          },
+          "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
     {% endif %}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
