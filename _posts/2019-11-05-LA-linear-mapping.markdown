@@ -37,7 +37,7 @@ Linear Mapping은 두 Vector Space $\mathcal{A}$와 $\mathcal{B}$가 있을 때 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Composition of Mappings
-$T = \mathcal{A} \rightarrow  \mathcal{B}$ 와 $U = $\mathcal{B} \rightarrow  \mathcal{C}$가 있을 때, 모든 $a \in \mathcal{A}$에 대해서 mapping되는 $b \in \mathcal{B}$, $T(a) = b$와 모든 $b \in \mathcal{B}$에 대해서 mapping되는 $c \in \mathcal{C}$, $U(b) = c$가 있다. 이 때, 이 두 함수 $T$와 $U$를 $a$에 적용하는 것을 $T$와 $U$의 _composition_ 이라고 하고 
+$T = \mathcal{A} \rightarrow  \mathcal{B}$ 와 $U = \mathcal{B} \rightarrow  \mathcal{C}$가 있을 때, 모든 $a \in \mathcal{A}$에 대해서 mapping되는 $b \in \mathcal{B}$, $T(a) = b$와 모든 $b \in \mathcal{B}$에 대해서 mapping되는 $c \in \mathcal{C}$, $U(b) = c$가 있다. 이 때, 이 두 함수 $T$와 $U$를 $a$에 적용하는 것을 $T$와 $U$의 _composition_ 이라고 하고 
 
 $(U \circ T) (a) = U(T(a))$ 혹은 $a(T \circ U) = aTU$ 라고 표기한다.
 
@@ -50,7 +50,7 @@ $T : \mathcal{A} \rightarrow \mathcal{B}$이고 $a \in \mathcal{A}$, $b \in \mat
 
 * _one to one_ : 모든 $a$가 unique한 $b$에 mapping되는 경우
 * _onto_ : 모든 $b$가 몇몇, 혹은 모든 $a$로 인해 mapping되는 경우
-* _isomorphic_ : _one to one_ 이면서 _onto_인 경우
+* _isomorphic_ : _one to one_ 이면서 _onto_ 인 경우
 
 ![Special Type of Mapping](/assets/images/post/2019-11-08-Linear-Mapping/special1.jpg)
 
@@ -84,9 +84,12 @@ _ono to ono_ 이면서 _onto_ 인 Linear Mapping을 _isomorphism_ 이라고 한�
 
 여기서 $A$의 _basis vector_ 를 $B$로 transform했을 때, $B$ 내에 있는 $T(\vec{u_1}), T(\vec{u_2}), \dots, T(\vec{u_m})$은 $B$의 _basis vector_ 를 가지고 다음과 같이 표현할 수 있다.
 
-$T(\vec{u_1}) = a_{1,1}\vec{v_1} + a_{1,2}\vec{v_2} + \dots + a_{1,n}\vec{v_n} \\$
-$T(\vec{u_2}) = a_{2,1}\vec{v_1} + a_{2,2}\vec{v_2} + \dots + a_{2,n}\vec{v_n} \\$
-$\vdots \\$
+$T(\vec{u_1}) = a_{1,1}\vec{v_1} + a_{1,2}\vec{v_2} + \dots + a_{1,n}\vec{v_n}$
+&nbsp;&nbsp;&nbsp;&nbsp;
+$T(\vec{u_2}) = a_{2,1}\vec{v_1} + a_{2,2}\vec{v_2} + \dots + a_{2,n}\vec{v_n}$
+&nbsp;&nbsp;&nbsp;&nbsp;
+$\vdots$
+&nbsp;&nbsp;&nbsp;&nbsp;
 $T(\vec{u_m}) = a_{m,1}\vec{v_1} + a_{m,2}\vec{v_2} + \dots + a_{m,n}\vec{v_n}$ 
 
 여기서 위 식의 coefficients를 matrix $T$로 변경했을 때 다음과 같이 된다.
