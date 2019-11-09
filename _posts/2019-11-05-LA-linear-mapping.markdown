@@ -16,7 +16,7 @@ MathJax: true
 
 # Linear Mapping
 ----
-Linear Mapping은 두 Vector Space $\mathcal{A}}$와 $\mathcal{B}$가 있을 때 $\mathcal{A}$에서 $\mathcal{B}$로 변환하는 함수를 말한다. Linear Transformation, Linear Operation 이라고도 한다. 
+Linear Mapping은 두 Vector Space $\mathcal{A}$와 $\mathcal{B}$가 있을 때 $\mathcal{A}$에서 $\mathcal{B}$로 변환하는 함수를 말한다. Linear Transformation, Linear Operation 이라고도 한다. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -25,9 +25,8 @@ Linear Mapping은 두 Vector Space $\mathcal{A}}$와 $\mathcal{B}$가 있을 때
 가장 기본적인 아이디어는 어떠한 집합에 있는 멤버를 다른 집합의 멤버와 연관시키는 규칙이다.
 
 
-* 정의
-
-- $\mathcal{A} = \{ a_{1}, a_{2}, \dots, a_{m} \}$과 $\mathcal{B} = \{ b_{1}, b_{2}, \dots, b_{n}} \}$ 가 있을 때, $\mathcal{A}$에서 $\mathcal{B}$로 변환되는 함수를 $T = $\mathcal{A} \leftarrow  \mathcal{B}$ 로 쓴다. 
+**정의**
+- $\mathcal{A} = \{ a_{1}, a_{2}, \dots, a_{m} \}$과 $\mathcal{B} = \{ b_{1}, b_{2}, \dots, b_{n} \}$ 가 있을 때, $\mathcal{A}$에서 $\mathcal{B}$로 변환되는 함수를 $T = $\mathcal{A} \leftarrow  \mathcal{B}$ 로 쓴다. 
 -  $T$는 $a \in \mathcal{A}, b \in \mathcal{B}$를 만족하는 $(a,b)$의 집합이다.
 - $\mathcal{A}$ 를 _domain_ $\mathcal{B}$를 _range_ 혹은 _codomain_이라고 부른다. 이 때, function $T$내에 모든 쌍은 unique하고 $a \in \mathcal{A}$인 모든 원소는 한 쌍씩이어야만 한다. 
 - $a$에 매칭되는 $\mathcal{B}$의 값을 $T(a)$혹은 $aT$로 표기하고 _image of a_라고 부르고 이 때 $a$는 _preimage_라고 한다.
@@ -40,7 +39,7 @@ Linear Mapping은 두 Vector Space $\mathcal{A}}$와 $\mathcal{B}$가 있을 때
 ### Composition of Mappings
 $T = $\mathcal{A} \leftarrow  \mathcal{B}$ 와 $U = $\mathcal{B} \leftarrow  \mathcal{C}$가 있을 때, 모든 $a \in \mathcal{A}$에 대해서 mapping되는 $b \in \mathcal{B}$, $T(a) = b$와 모든 $b \in \mathcal{B}$에 대해서 mapping되는 $c \in \mathcal{C}$, $U(b) = c$가 있다. 이 떄, 이 두 함수 $T$와 $U$를 $a$에 적용하는 것을 $T$와 $U$의 _composition_이라고 하고 
 
-$(U \circ T) (a) = U(T(a))$ 혹은 $a(T\circU) = aTU$ 라고 표기한다.
+$(U \circ T) (a) = U(T(a))$ 혹은 $a(T \circ U) = aTU$ 라고 표기한다.
 
 Mapping의 Composition은 결합법칙이 성립한다. 예를 들어 $T: \mathcal{A} \rightarrow \mathcal{B}$  $U: \mathcal{B} \rightarrow \mathcal{C}$ $V: \mathcal{C} \rightarrow \mathcal{D}$ 이 있을 때,  $(V \circ U) \circ T = V \circ (U \circ T)$가 성립한다.
 
@@ -86,8 +85,11 @@ _ono to ono_이면서 _onto_인 Linear Mapping을 _isomorphism_ 이라고 한다
 여기서 $A$의 _basis vector_를 $B$로 transform했을 때, $B$ 내에 있는 $T(\vec{u_1}), T(\vec{u_2}), \dots, T(\vec{u_m})$은 $B$의 _basis vector_를 가지고 다음과 같이 표현할 수 있다.
 
 $T(\vec{u_1}) = a_{1,1}\vec{v_1} + a_{1,2}\vec{v_2} + \dots + a_{1,n}\vec{v_n}$
+&nbsp;
 $T(\vec{u_2}) = a_{2,1}\vec{v_1} + a_{2,2}\vec{v_2} + \dots + a_{2,n}\vec{v_n}$
+&nbsp;
 $\vdots$
+&nbsp;
 $T(\vec{u_m}) = a_{m,1}\vec{v_1} + a_{m,2}\vec{v_2} + \dots + a_{m,n}\vec{v_n}$
 
 여기서 위 식의 coefficients를 matrix $T$로 변경했을 때 다음과 같이 된다.
@@ -95,16 +97,16 @@ $T(\vec{u_m}) = a_{m,1}\vec{v_1} + a_{m,2}\vec{v_2} + \dots + a_{m,n}\vec{v_n}$
 $$
 T = 
 \begin{bmatrix} 
-a_{1,1} & a_{1,2} & \dots & a_{1,n} \ 
-a_{2,1} & a_{2,2} & \dots & a_{2,n} \ 
-\vdots & \vdots & \ddots & \vdots \ 
+a_{1,1} & a_{1,2} & \dots & a_{1,n} \\ 
+a_{2,1} & a_{2,2} & \dots & a_{2,n} \\
+\vdots & \vdots & \ddots & \vdots \\
 a_{m,1} & a_{m,2} & \dots & a_{m,n} 
 \end{bmatrix}
 $$
 
 이 때, 두 가지 사실을 확인할 수 있다.
 
-1. $x \in \mathcal{A}$가 $T$로 인한 transform은 다음과 같이 표시된다.
+* $x \in \mathcal{A}$가 $T$로 인한 transform은 다음과 같이 표시된다.
 
 $$
 T(\vec{x}) = 
@@ -112,13 +114,13 @@ T(\vec{x}) =
 x_1 & x_2 & \dots & x_m
 \end{bmatrix}
 \begin{bmatrix} 
-a_{1,1} & a_{1,2} & \dots & a_{1,n} \ 
-a_{2,1} & a_{2,2} & \dots & a_{2,n} \ 
-\vdots & \vdots & \ddots & \vdots \ 
+a_{1,1} & a_{1,2} & \dots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \dots & a_{2,n} \\
+\vdots & \vdots & \ddots & \vdots \\
 a_{m,1} & a_{m,2} & \dots & a_{m,n} 
 \end{bmatrix}
 $$
 
-2. vector space $A$, $B$, $C$가 있을 때, linear mapping $T : A \rightarrow B$, $S : B \rightarrow C$ 라고하자. 여기서 $T$와 $S$의 _combination_은 아래와 같이 표기한다.
+* vector space $A$, $B$, $C$가 있을 때, linear mapping $T : A \rightarrow B$, $S : B \rightarrow C$ 라고하자. 여기서 $T$와 $S$의 _combination_은 아래와 같이 표기한다.
 
 $S(T(\vec{v})) = \vec{v}TS$
