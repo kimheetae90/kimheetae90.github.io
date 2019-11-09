@@ -26,7 +26,7 @@ Linear Mapping은 두 Vector Space $\mathcal{A}$와 $\mathcal{B}$가 있을 때 
 
 
 **정의**
-- $\mathcal{A} = \{ a_{1}, a_{2}, \dots, a_{m} \}$과 $\mathcal{B} = \{ b_{1}, b_{2}, \dots, b_{n} \}$ 가 있을 때, $\mathcal{A}$에서 $\mathcal{B}$로 변환되는 함수를 $T = $\mathcal{A} \leftarrow  \mathcal{B}$ 로 쓴다. 
+- $\mathcal{A}$ $=$ $\{ a_{1}, a_{2}, \dots, a_{m} \}$과 $\mathcal{B}$ $=$ \{ b_{1}, b_{2}, \dots, b_{n} \}$ 가 있을 때, $\mathcal{A}$에서 $\mathcal{B}$로 변환되는 함수를 $T = \mathcal{A} \rightarrow \mathcal{B}$ 로 쓴다. 
 -  $T$는 $a \in \mathcal{A}, b \in \mathcal{B}$를 만족하는 $(a,b)$의 집합이다.
 - $\mathcal{A}$ 를 _domain_ $\mathcal{B}$를 _range_ 혹은 _codomain_이라고 부른다. 이 때, function $T$내에 모든 쌍은 unique하고 $a \in \mathcal{A}$인 모든 원소는 한 쌍씩이어야만 한다. 
 - $a$에 매칭되는 $\mathcal{B}$의 값을 $T(a)$혹은 $aT$로 표기하고 _image of a_라고 부르고 이 때 $a$는 _preimage_라고 한다.
@@ -37,7 +37,7 @@ Linear Mapping은 두 Vector Space $\mathcal{A}$와 $\mathcal{B}$가 있을 때 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Composition of Mappings
-$T = $\mathcal{A} \leftarrow  \mathcal{B}$ 와 $U = $\mathcal{B} \leftarrow  \mathcal{C}$가 있을 때, 모든 $a \in \mathcal{A}$에 대해서 mapping되는 $b \in \mathcal{B}$, $T(a) = b$와 모든 $b \in \mathcal{B}$에 대해서 mapping되는 $c \in \mathcal{C}$, $U(b) = c$가 있다. 이 떄, 이 두 함수 $T$와 $U$를 $a$에 적용하는 것을 $T$와 $U$의 _composition_이라고 하고 
+$T = $\mathcal{A} \rightarrow  \mathcal{B}$ 와 $U = $\mathcal{B} \rightarrow  \mathcal{C}$가 있을 때, 모든 $a \in \mathcal{A}$에 대해서 mapping되는 $b \in \mathcal{B}$, $T(a) = b$와 모든 $b \in \mathcal{B}$에 대해서 mapping되는 $c \in \mathcal{C}$, $U(b) = c$가 있다. 이 떄, 이 두 함수 $T$와 $U$를 $a$에 적용하는 것을 $T$와 $U$의 _composition_이라고 하고 
 
 $(U \circ T) (a) = U(T(a))$ 혹은 $a(T \circ U) = aTU$ 라고 표기한다.
 
@@ -52,14 +52,14 @@ $T : \mathcal{A} \rightarrow \mathcal{B}$이고 $a \in \mathcal{A}$, $b \in \mat
 * _onto_ : 모든 $b$가 몇몇, 혹은 모든 $a$로 인해 mapping되는 경우
 * _isomorphic_ : _one to one_이면서 _onto_인 경우
 
-![Special Type of Mapping](/assets/images/post/2019-11-08-Linear-Mapping/Special.jpg)
+![Special Type of Mapping](/assets/images/post/2019-11-08-Linear-Mapping/special.jpg)
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Inverse Mapping
 $T : \mathcal{A} \rightarrow \mathcal{B}$에서 $TT^(-1) = I$를 만족하는 $T^(-1) : \mathcal{B} \rightarrow \mathcal{A}$가 존재할 때 _invertible_하다고 한다. 이 때, $T$는 _isomorphic_해야한다.
 
-![Special Type of Mapping](/assets/images/post/2019-11-08-Linear-Mapping/invertible.jpg)
+![Special Type of Mapping](/assets/images/post/2019-11-08-Linear-Mapping/Invertible.jpg)
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
