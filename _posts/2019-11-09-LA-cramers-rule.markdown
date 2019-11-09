@@ -27,7 +27,8 @@ $$
 
 위 식의 해를 구하면 다음과 같다.
 
-$a_{1,1}a_{2,2} - a_{1,2}a_{2,1} \neq 0$ 일 때,
+$a_{1,1}a_{2,2} - a_{1,2}a_{2,1} \neq 0$ 일 때, &nbsp;&nbsp;&nbsp;&nbsp;
+
 $$
 x_1 = 
 \frac
@@ -46,14 +47,14 @@ $$
 $$
 x_1 = 
 \frac
-{\begin{vmatrix} c_{1} & a_{1,2} \ c_{2} & a_{2,2} \end{vmatrix}} 
-{\begin{vmatrix} a_{1,1} & a_{1,2} \ a_{2,1} & a_{2,2} \end{vmatrix}}
+{\begin{vmatrix} c_{1} & a_{1,2} \\ c_{2} & a_{2,2} \end{vmatrix}} 
+{\begin{vmatrix} a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2} \end{vmatrix}}
 ,
 
 x_2 = 
 \frac
-{\begin{vmatrix} a_{1,1} & c_{1} \ a_{2,1} & c_{2} \end{vmatrix}} 
-{\begin{vmatrix} a_{1,1} & a_{1,2} \ a_{2,1} & a_{2,2} \end{vmatrix}}
+{\begin{vmatrix} a_{1,1} & c_{1} \\ a_{2,1} & c_{2} \end{vmatrix}} 
+{\begin{vmatrix} a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2} \end{vmatrix}}
 $$
 
 위 공식을 통해 아래 Matrix를 풀어보자!
@@ -68,8 +69,8 @@ $$
 $$
 x_1 = 
 \frac
-{\begin{vmatrix} 6 & 2 \ 1 & -1 \end{vmatrix}} 
-{\begin{vmatrix} 3 & 2 \ 1 & -1 \end{vmatrix}}
+{\begin{vmatrix} 6 & 2 \\ 1 & -1 \end{vmatrix}} 
+{\begin{vmatrix} 3 & 2 \\ 1 & -1 \end{vmatrix}}
  = 
 \frac
 {8}
@@ -78,8 +79,8 @@ x_1 =
 
 x_2 = 
 \frac
-{\begin{vmatrix} 3 & 6 \ 1 & 1 \end{vmatrix}} 
-{\begin{vmatrix} 3 & 2 \ 1 & -1 \end{vmatrix}}
+{\begin{vmatrix} 3 & 6 \\ 1 & 1 \end{vmatrix}} 
+{\begin{vmatrix} 3 & 2 \\ 1 & -1 \end{vmatrix}}
  = 
 \frac
 {3}
