@@ -34,7 +34,7 @@ x_1 =
 \frac
 {c_1a_{2,2} - c_2a_{1,2}}
 {a_{1,1}a_{2,2} - a_{1,2}a_{2,1}}
-, \hfill
+,    
 
 x_2 = 
 \frac
@@ -49,7 +49,7 @@ x_1 =
 \frac
 {\begin{vmatrix} c_{1} & a_{1,2} \\ c_{2} & a_{2,2} \end{vmatrix}} 
 {\begin{vmatrix} a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2} \end{vmatrix}}
-, \hfill
+,    
 
 x_2 = 
 \frac
@@ -75,7 +75,7 @@ x_1 =
 \frac
 {8}
 {5}
-, \hfill
+,    
 
 x_2 = 
 \frac
