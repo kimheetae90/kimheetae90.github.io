@@ -12,6 +12,7 @@ tag:
 category: blog
 author: heetaekim
 description: Linear Space
+MathJax: true
 ---
 # Linear Space
 ----
