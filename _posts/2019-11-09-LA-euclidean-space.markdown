@@ -54,6 +54,6 @@ $\mathcal{V} = {\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}}$ 가 있을 때
 1. $\vec{u_1} = \vec{v_1}$ 이다.
 2. $\vec{u_2} = \vec{v_2} - Proj_{u_1}(v_2)$ 이다. 즉, $\vec{u_2} = \vec{v_2} - \langle \vec{v_2}, \vec{u_1} \rangle \vec{u_1}$
 3. $\vec{u_3} = \vec{v_2} - Proj_{u_1}(v_3) - Proj_{u_2}(v_3)$ 이다. 즉, $\vec{u_2} = \vec{v_3} - \langle \vec{v_3}, \vec{u_1} \rangle \vec{u_1} - \langle \vec{v_3}, \vec{u_2} \rangle \vec{u_2}$
-4. 이를 반복한다. 일반화하면 $vec{u_k} = vec{v_k} - \sum_{i=1}^{k-1}{Proj_{u_i}(v_k)}$이다.
+4. 이를 반복한다. 일반화하면 $\vec{u_k} = \vec{v_k} - \sum_{i=1}^{k-1}{Proj_{u_i}(v_k)}$이다.
 
 이렇게 생성된 $\vec{u_k}$들을 _normalize_ 하면 _Gram-Schmidt orthonormalization_ 가 되고 이는 $\mathcal{V}$의 basis가 된다.
