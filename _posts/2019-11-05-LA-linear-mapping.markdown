@@ -121,4 +121,4 @@ $$
 
 * vector space $A$, $B$, $C$가 있을 때, linear mapping $T : A \rightarrow B$, $S : B \rightarrow C$ 라고하자. 여기서 $T$와 $S$의 _combination_ 은 아래와 같이 표기한다.
 
-$S(T(\vec{v})) = \vec{v}TS$
+$$S(T(\vec{v})) = \vec{v}TS$$
