@@ -38,7 +38,7 @@ $$ \vec{v} M = \lambda \vec{v} $$
 
 $$ \vec{v}(\lambda I - M) = \vec{0} $$
 
-이 식에서 $\vec{v}$가 0이 아니라면 $|\lambda I - M|$ = 0$ 을 만족해야한다. 
+이 식에서 $\vec{v}$가 0이 아니라면 $|\lambda I - M| = 0$ 을 만족해야한다. 
 이 를 _characteristic polynomial_ 라고 부른다. 예시를 들어보자!
 
 $$
