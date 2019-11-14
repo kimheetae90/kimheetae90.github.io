@@ -17,17 +17,21 @@ MathJax: true
 ----
 우리는 Linear System이 유일한 해를 갖을 때, 쉽게 해를 구할 수 있다. 예를 들어 Point 2개를 지나는 직선을 구하는 Linear System을 만들어보자. 
 
-$$P_{1} = (p_{1,1}, p_{1,2})$$
-&nbsp;&nbsp;&nbsp;&nbsp;
-$$P_{2} = (p_{2,1}, p_{2,2})$$
-&nbsp;&nbsp;&nbsp;&nbsp;
+$$
+P_{1} = (p_{1,1}, p_{1,2})
+$$
+$$
+P_{2} = (p_{2,1}, p_{2,2})
+$$
 
 이 두 점을 지나는 직선을 $y = mx + b$ 라고 했을 때, m과 b를 coefficients로 갖는 Linear System은 다음과 같다.
 
-$$p_{1,1}m + b = p_{1,2}$$
-&nbsp;&nbsp;&nbsp;&nbsp;
-$$p_{2,1}m + b = p_{2,2}$$
-&nbsp;&nbsp;&nbsp;&nbsp;
+$$
+p_{1,1}m + b = p_{1,2}
+$$
+$$
+p_{2,1}m + b = p_{2,2}
+$$
 
 즉,
 
