@@ -27,9 +27,9 @@ Vector Space는 '방향이 있는 직선'이라고 정의하는 vector 집합으
 
 # Span
 ----
-$\{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n} \} \in \mathcal{V}$ 가 주어졌을 때, 이 vector을 Linear Combination한 vector로 이루어진 vector set $\mathcal{S}$는 또 다른 vector space를 만드는데 이 때 이 공간을 _spanned_ 되었다고 한다. 모든 vector $w \in \mathcal{S}$는 
+$\{ \vec{v_1}, \vec{v_2}, \dots, \vec{v_n} \} \in \mathcal{V}$ 가 주어졌을 때, 이 vector을 Linear Combination한 vector로 이루어진 vector set $\mathcal{S}$는 또 다른 vector space를 만드는데 이 때 이 공간을 _spanned_ 되었다고 한다. 모든 vector $w \in \mathcal{S}$는 
 
-$$ \vec{w} = \lambda_1 \vec{v_1} + \lambda_2 \vec{v_2} + \ddots + \lambda_n \vec{v_n}, \lambda_i \in \mathbb{R}$$
+$$ \vec{w} = \lambda_1 \vec{v_1} + \lambda_2 \vec{v_2} + \dots + \lambda_n \vec{v_n}, \lambda_i \in \mathbb{R}$$
 
 로 표현될 수 있다.
 
@@ -45,7 +45,7 @@ $$ \vec{w} = \lambda_1 \vec{v_1} + \lambda_2 \vec{v_2} + \ddots + \lambda_n \vec
 ----
 위 예시에서 만약 2개의 vector가 평행했다면 어떨까? 평면을 정의할 수 없을 것이다. 다른 예로 $\vec{u}, \vec{v}, \vec{w}$가 있을 때 만약 $\vec{w} = \alpha\vec{u}$라면 이 세 vector로는 3차원 공간을 정의할 수 없을 것이다. 또 이 때 $\vec{w}$는 $\vec{u}와 \vec{v}$로 _spanned_ 된 공간에 포함되는 vector이다. 이러한 경우를 _linear dependent_ 하다고 한다. 즉 다른 vector들로 한 vector를 표현할 수 있을 때 이며 수식으로 표현하자면
 
-$$ \lambda_1 \vec{v_1} + \lambda_2 \vec{v_2} + \ddots + \lambda_n \vec{v_n} = \vec{0}$$
+$$ \lambda_1 \vec{v_1} + \lambda_2 \vec{v_2} + \dots + \lambda_n \vec{v_n} = \vec{0}$$
 
 위를 만족하는 0이 아닌 $\lambda$가 존재할 때 이고, 만약 모든 $\lambda$가 0이어야 한다면 이를 _linear independent_ 하다고 한다. _lienar independent_ 하다는 말은 주어진 vector들 사이에서 각각의 vector로 다른 vector를 표현할 수 없다는 말이다.
 
@@ -55,15 +55,15 @@ $$ \lambda_1 \vec{v_1} + \lambda_2 \vec{v_2} + \ddots + \lambda_n \vec{v_n} = \v
 ----
 &nbsp;&nbsp;&nbsp;&nbsp;
 ### Basis
-Vector Space $\{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n}  \} \in \mathcal{S}$가 주어졌을 때
-1. $\{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n}  \}$ 는 linearly independent 하고
-2. $\{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n}  \}$는 $\mathcal{S}$의 spanning set 이라면
+Vector Space $\{ \vec{v_1}, \vec{v_2}, \dots, \vec{v_n}  \} \in \mathcal{S}$가 주어졌을 때
+1. $\{ \vec{v_1}, \vec{v_2}, \dots, \vec{v_n}  \}$ 는 linearly independent 하고
+2. $\{ \vec{v_1}, \vec{v_2}, \dots, \vec{v_n}  \}$는 $\mathcal{S}$의 spanning set 이라면
 
-$\{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n}  \}$를 $\mathcal{S}$의 _basis_ 라고 부른다.
+$\{ \vec{v_1}, \vec{v_2}, \dots, \vec{v_n}  \}$를 $\mathcal{S}$의 _basis_ 라고 부른다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 ### Subspace
-이 때 $\mathcal{V} = \{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n}  \}$로부터 spanned된 space를 _subspace_ of $\mathcal{S}$라고 부른다.
+이 때 $\mathcal{V} = \{ \vec{v_1}, \vec{v_2}, \dots, \vec{v_n}  \}$로부터 spanned된 space를 _subspace_ of $\mathcal{S}$라고 부른다.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 ### Dimension
@@ -73,7 +73,7 @@ $\{ \vec{v_1}, \vec{v_2}, \ddots, \vec{v_n}  \}$를 $\mathcal{S}$의 _basis_ 라
 
 여기서 중요한 것이 있는데 
 
-$$\vec{w} = x_1\vec{v_1} + x_2\vec{v_2} + \ddots + x_n\vec{v_n}, x_i \in \mathbb{R}$$
+$$\vec{w} = x_1\vec{v_1} + x_2\vec{v_2} + \dots + x_n\vec{v_n}, x_i \in \mathbb{R}$$
 
 인 $\vec{w}$가 있을 때, $\vec{w}$를 만들 수 있는 $x_i$는 unique 해야한다. 이 때 $x_i\vec{v_i}$를 $\vec{w}$의 _components_ 라고 부르고 $x_i$를 $\vec{w}$의 _corrdinates_ 라고 부른다.
 
@@ -82,7 +82,7 @@ $$\vec{w} = x_1\vec{v_1} + x_2\vec{v_2} + \ddots + x_n\vec{v_n}, x_i \in \mathbb
 ### Orientation
 두 vector $\vec{u}, \vec{v}$가 있을 때 두 vector 사이의 각을 $\theta_{\vec{u}\vec{v}}$라고 표현한다. vector는 사전식으로 읽고 사이각은 order$(\theta_{\vec{u}\vec{v}})$ 라고 표기한다. 사이각의 화살표는 아래와 같이 $\vec{u}$에서 $\vec{v}$로 가도록 그리고 이를 양수로 간주한다. 이 것을 "counterclockwise"라고 부른다.
 
-![angle]](/assets/images/post/2019-11-18-Vector-Space/angle.jpg)
+![angle](/assets/images/post/2019-11-18-Vector-Space/angle.jpg)
 
 이 때 좌표계를 정의할 수 있는데 위 그림에서 vector 하나를 더 추가해보자. 두 vector가 이루는 spcae는 모니터와 평행하다고 할 때 모니터 안에서 밖으로 나오는 vector $\vec{w}$가 있다고 가정하자. 이 때 세 vector가 이루는 방향의 관계를
 $$sgn(\vec{u}, \vec{v}, \vec{w}) = sgn(\theta_{\vec{u}\vec{v}})$$
@@ -93,20 +93,20 @@ $sgn(\vec{u}, \vec{v}, \vec{w})$를 만든 후 오른손 엄지손가락으로 $
 
 # Change of Basis
 ----
-$\mathcal{V}$를 이루는 두 basis vector $\vec{a_1}, \vec{a_2}, \ddots, \vec{a_n}$과 $\vec{b_1}, \vec{b_2}, \ddots, \vec{b_n}$가 있다고 하자. 이 때 $\vec{w} \in \mathcal{V}$을 표현할 때, $\vec{a_1}, \vec{a_2}, \ddots, \vec{a_n}$들의 Linear Combination으로 표현할 수 있다.
-$$\vec{w} = c_1\vec{a_1} + c_2\vec{a_2} + \ddots + c_n\vec{a_n}$$
-또 $\vec{a_i}$ 자체도 $\vec{b_1}, \vec{b_2}, \ddots, \vec{b_n}$들의 Linear Combination으로 표현할 수 있기 때문에
-$$\vec{a_i} = d_{i,1}\vec{b_1} + d_{i,2}\vec{b_2} + \ddots + d_{i,n}\vec{b_n} $$
+$\mathcal{V}$를 이루는 두 basis vector $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}$과 $\vec{b_1}, \vec{b_2}, \dots, \vec{b_n}$가 있다고 하자. 이 때 $\vec{w} \in \mathcal{V}$을 표현할 때, $\vec{a_1}, \vec{a_2}, \dots, \vec{a_n}$들의 Linear Combination으로 표현할 수 있다.
+$$\vec{w} = c_1\vec{a_1} + c_2\vec{a_2} + \dots + c_n\vec{a_n}$$
+또 $\vec{a_i}$ 자체도 $\vec{b_1}, \vec{b_2}, \dots, \vec{b_n}$들의 Linear Combination으로 표현할 수 있기 때문에
+$$\vec{a_i} = d_{i,1}\vec{b_1} + d_{i,2}\vec{b_2} + \dots + d_{i,n}\vec{b_n} $$
 로 표현할 수 있다.
 이를 대입해보면
 
-$$\vec{w} = c_1\vec{a_1} + c_2\vec{a_2} + \ddots + c_n\vec{a_n}\\
- = c_1(d_{1,1}\vec{b_1} + d_{1,2}\vec{b_2} + \ddots + d_{1,n}\vec{b_n}) \\
- + c_2(d_{2,1}\vec{b_1} + d_{2,2}\vec{b_2} + \ddots + d_{2,n}\vec{b_n}) \\
- + \ddots +  c_n(d_{n,1}\vec{b_1} + d_{n,2}\vec{b_2} + \ddots + d_{n,n}\vec{b_n}) \\
- = (d_1c_{1,1} + d_2c_{1,2} + \ddots + d_nc_{1,n})\vec{b_1} \\
- + (d_1c_{2,1} + d_2c_{2,2} + \ddots + d_nc_{2,n})\vec{b_2} \\
- + \ddots + (d_1c_{n,1} + d_2c_{n,2} + \ddots + d_nc_{n,n})\vec{b_n}
+$$\vec{w} = c_1\vec{a_1} + c_2\vec{a_2} + \dots + c_n\vec{a_n}\\
+ = c_1(d_{1,1}\vec{b_1} + d_{1,2}\vec{b_2} + \dots + d_{1,n}\vec{b_n}) \\
+ + c_2(d_{2,1}\vec{b_1} + d_{2,2}\vec{b_2} + \dots + d_{2,n}\vec{b_n}) \\
+ + \dots +  c_n(d_{n,1}\vec{b_1} + d_{n,2}\vec{b_2} + \dots + d_{n,n}\vec{b_n}) \\
+ = (d_1c_{1,1} + d_2c_{1,2} + \dots + d_nc_{1,n})\vec{b_1} \\
+ + (d_1c_{2,1} + d_2c_{2,2} + \dots + d_nc_{2,n})\vec{b_2} \\
+ + \dots + (d_1c_{n,1} + d_2c_{n,2} + \dots + d_nc_{n,n})\vec{b_n}
 $$
 
 과 같이 된다. 이는 행렬 곱셈을 통해 간단히 수행될 수 있다.
@@ -119,7 +119,7 @@ $$
 _linear transformation_ 은 한 vector space에서 다른 vector space로 maaping되는 것을 일컷는다. 즉 $\mathcal{U}, \mathcal{V}, T : \mathcal{U} \rightarrow \mathcal{V}$가 있을 때
 
 1. $T(\vec{u} + \vec{v}) = T(\vec{u}) + T(\vec{v})$, $\vec{u}, \vec{v} \in \mathcal{V}$
-2. $T(\alpha\vec{v}) = \alphaT(\vec{u})$, $\alpha \in \mathbb{R} \vec{u} \in \mathcal{V}$
+2. $T(\alpha\vec{v}) = \alpha T(\vec{u})$, $\alpha \in \mathbb{R} \vec{u} \in \mathcal{V}$
 
 을 만족한다.
 
