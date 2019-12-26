@@ -77,7 +77,7 @@ Affine Space에서는 origin에 대해서 언급하지 않았다. 그리고 각�
 ## Scalar Product
 _dot product_ 라고 알려져 있고 _inner product_ 라고도 부른다. 특성을 알아보기 전에 몇가지 알아야할 정의가 있다.
 
-* Length : $\vec{u}$의 길이이고 $ ||\vec{u}|| $ 라고 쓴다.
+* Length : $\vec{u}$의 길이이고 $\|\|\vec{u}\|\|$ 라고 쓴다.
 * Direction : $\vec{u}$의 방향이고 $dir(\vec{u})$ 라고 쓴다.
 * Sign : $\alpha$의 부호이고 $sgn(\alpha)$ 라고 쓴다.
 * Perpendicular : $\vec{u}와 \vec{v}$가 서로 수직이면 $\vec{u}\perp\vec{v}$ 라고 쓴다.
