@@ -89,22 +89,22 @@ _dot product_ 라고 알려져 있고 _inner product_ 라고도 부른다. 특�
 
 위 그림에서 우리는 두 가지 요소를 볼 수 있다.
 
-* $\vec{v}_{\perp}$ : $\vec{u}$에 수직인 $\vec{v}$의 요소로 _normal component_ 라고 부른다
-* $\vec{v}_{\parallel}$ : $\vec{u}$와 평행인 $\vec{v}$의 요소로 _orthogonal projection_ 이라고 부른다.
+* $\vec{v}_{\perp}$ : $\vec{u}$ 에 수직인 $\vec{v}$의 요소로 normal component 라고 부른다
+* $\vec{v}_{\parallel}$ : $\vec{u}$와 평행인 $\vec{v}$의 요소로 orthogonal projection 이라고 부른다.
 
 여기서 볼 수 있는 성질은 아래와 같다.
 
 * $\vec{v}_{\perp} + \vec{v}_{\parallel} = \vec{v}$
-* $||\vec{v}_{\perp}|| = ||\vec{v}|||\sin\theta|$
-* $||\vec{v_{\parallel}}|| = ||\vec{v}|||\cos\theta|$
-* $\vec{v}_{||} = ||\vec{v}||\cos\theta\hat{u}$, $\hat{u}$는 unit vector이고 값은 $\frac{\vec{u}}{||\vec{u}||}$
+* $\|\|\vec{v}_{\perp}\|\| = \|\|\vec{v}\|\|\|\sin\theta\|$
+* $\|\|\vec{v_{\parallel}}\|\| = \|\|\vec{v}\|\|\|\cos\theta\|$
+* $\vec{v}_{\parallel} = \|\|\vec{v}\|\|\cos\theta\hat{u}$, $\hat{u}$는 unit vector이고 값은 $\frac{\vec{u}}{\|\|\vec{u}\|\|}$
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 #### Scalar Product의 특성
 _dot product_ 는 몇가지 특성을 가지고 있다. 그 특성은 아래와 같다.
 
-1. 정의: $\vec{u}\cdot\vec{v} = ||\vec{u}||||\vec{v}||cos\theta$
+1. 정의: $\vec{u}\cdot\vec{v} = \|\|\vec{u}\|\|\|\|\vec{v}\|\|cos\theta$
 2. 쌍선형: $\forall\alpha\beta \in \mathbb{R}$, $\forall\vec{u},\vec{v},\vec{w} \in \mathcal{A}.\mathcal{V}$,
 $(\alpha\vec{u} + \beta\vec{v})\cdot\vec{w} = \alpha(\vec{u}\cdot\vec{w}) + \beta(\vec{v}\cdot\vec{w})$
 $\vec{u}\cdot(\alpha\vec{v} + \beta\vec{w}) = \alpha(\vec{u}\cdot\vec{v}) + \beta(\vec{u}\cdot\vec{w})$
@@ -116,9 +116,9 @@ $\vec{0}\cdot\vec{0} = 0$
 
 위 내용들을 바탕으로 아래와 같이 정리할 수 있다.
 
-1. Squared length : $\vec{u}\cdot\vec{u} = ||\vec{u}||^{2}$
-2. Angle : $\theta = cos^{-1}\frac{\vec{u}\cdot\vec{v}}{||\vec{u}||||\vec{v}||}$
-3. Projection : $\vec{v}_{||} = \frac{(\vec{u}\cdot\vec{v})\vec{u}}{\vec{u}\cdot\vec{u}}$
+1. Squared length : $\vec{u}\cdot\vec{u} = \|\|\vec{u}\|\|^{2}$
+2. Angle : $\theta = cos^{-1}\frac{\vec{u}\cdot\vec{v}}{\|\|\vec{u}\|\|\|\|\vec{v}\|\|}$
+3. Projection : $\vec{v}_{\paraller} = \frac{(\vec{u}\cdot\vec{v})\vec{u}}{\vec{u}\cdot\vec{u}}$
 4. Normal : $\vec{v}_\perp = \vec{v} - \frac{(\vec{u}\cdot\vec{v})\vec{u}}{\vec{u}\cdot\vec{u}}$
 5. Perpendicular : $\vec{u}\cdot\vec{v} = 0 \Longleftrightarrow \vec{u} \perp \vec{v}$
 
@@ -133,10 +133,10 @@ _cross product_ 라고 알려져 있고 _outer product_ 라고도 부른다. _cr
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### Vector Product의 특성
-1. 정의 : $||\vec{u}\times\vec{v}|| = ||\vec{u}|| ||\vec{v}||sin\theta$
+1. 정의 : $\|\|\vec{u}\times\vec{v}\|\| = \|\|\vec{u}\|\| \|\|\vec{v}\|\|sin\theta$
 2. Anticommutativity : $\vec{u}\times\vec{v} \neq \vec{v}\times\vec{u}$
 3. Distributivity : $\vec{u}\times(\vec{v} + \vec{w}) = (\vec{u}\times\vec{v}) + (\vec{u}\times\vec{v})$ , $(\alpha\vec{u})\times\vec{v} = \vec{u}\times(\alpha\vec{v}) = \alpha(\vec{u}\times\vec{v})$
-4. Parallelism: $\vec{u}||\vec{v} = \Longleftrightarrow \vec{u}\times\vec{v} = \vec{0}$
+4. Parallelism: $\vec{u}\|\|\vec{v} = \Longleftrightarrow \vec{u}\times\vec{v} = \vec{0}$
 
 추가로 오른손 법칙을 따라서 두 vector $\vec{u}, \vec{v}$의 사이각  $\theta > 0$이면, _cross product_ 로 생성되는 vector는 화면에서 나오는 방향으로 향할 것이고 $\theta < 0$이면 그 반대 방향이다.
 
