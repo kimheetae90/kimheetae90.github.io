@@ -28,6 +28,8 @@ $P$ 혹은 $Q$
 
 이 때 $P$에서 $Q$로 가는 vector는 $\vec{pq}$ 로도 표현한다.
 
+&nbsp;&nbsp;&nbsp;&nbsp;
+
 # Affine Space
 ---
 우선 직관적으로는 Affine Space $\mathcal{A}$는 Point Set $\mathcal{P}$와 Vector Set $\mathcal{V}$로 이루어져 있다. 이 때 $\mathcal{A}$의 _dimension_ 은 $\mathcal{V}$의 _dimension_ 과 같다.
@@ -143,3 +145,79 @@ _cross product_ 라고 알려져 있고 _outer product_ 라고도 부른다. _cr
 또, 두 vector가 이루는 평행사변형의 넓이를 나타내기도 하는데 주의할 점은 $\theta > 0$이면  $sin\theta$의 절대 값을 사용해야 한다
 
 &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+# Volume, Determinant, the Scalar Triple Product
+---
+vector product를 통해 평행사변형의 넓이를 구한 것과 같이 평행 육면체의 부피도 구할 수 있다. linearly independent한 vector $\vec{u}, \vec{v}, \vec{w}$의 부피 $Vol(\vec{u}, \vec{v}, \vec{w})$는 아래와 같다.
+
+$$
+\begin{aligned}
+    Vol(\vec{u}, \vec{v}, \vec{w}) &=  base \times height & (정의)\\
+                                   &=  \|\|\vec{u}\|\| \|\|\vec{v}\|\| \sin\psi \times \|\|\vec{w}\|\| \|\cos\theta\| & (삼각법) \\
+                                   &= \|\|\vec{u}\|\| \|\|\vec{v}\|\| \sin\psi \centerdot \|\|\vec{w}_\parallel\|\| & (Dot Product) \\
+                                   &= \|\|\vec{u} \times \vec{v}\|\| \centerdot \|\|\vec{w}_\parallel\|\| & (Cross Product) \\
+                                   &= \|\|\vec{u} \times \vec{v} \centerdot \vec{w}_\parallel\|\| & (길이) \\
+                                   &= \|\|\vec{u} \times \vec{v} \centerdot \vec{w}\|\| & (길이) \\
+\end{aligned}    
+$$
+
+우리는 위 수식을 두 관점에서 볼 수 있다.
+
+$$
+ Vol(\vec{u}, \vec{v}, \vec{w})= 
+ \begin{cases} 
+ (\vec{u} \times \vec{v}) \centerdot \vec{w} & \Longleftrightarrow \vec{w}_\parallel \parallel \vec{u} \times \vec{v} \\
+   -(\vec{u} \times \vec{v}) \centerdot \vec{w} & \Longleftrightarrow \vec{w}_\parallel \parallel \vec{u} \times \vec{v} \\ 
+\end{cases} 
+ $$
+
+오른손 법칙에 의하면
+
+$$
+sgn(\vec{u}, \vec{v}, \vec{w}) =
+ sgn(\vec{u}, \vec{v}, \vec{w}{||})= 
+\begin{cases}
+ +1 & \Longleftrightarrow \vec{w}{\parallel} \parallel \vec{u}\times\vec{v} \\ -1 & \Longleftrightarrow \vec{w}_{\parallel} \parallel -\vec{u}\times\vec{v} \ 
+ \end{cases} 
+$$
+
+따라서 우리는 다음과 같이 결론지을 수 있다.
+
+$$ Vol(\vec{u}, \vec{v}, \vec{w}) = sgn(\vec{u}, \vec{v}, \vec{w})((\vec{u}\times\vec{v})\cdot\vec{w}) $$
+
+이 식에서 $(\vec{u}\times\vec{v})\cdot\vec{w}$ 은 _scalar triple product_ 라고 부르고  $\vec{u}, \vec{v}, \vec{w}$ 순으로 나열된 matrix의 determinant이기 때문에 $det(\vec{u}, \vec{v}, \vec{w})$ 로 표기한다. 
+
+위 식에 대입하면
+
+$$ Vol(\vec{u}, \vec{v}, \vec{w}) = |det(\vec{u}, \vec{v}, \vec{w})| = sgn(\vec{u}, \vec{v}, \vec{w})det(\vec{u}, \vec{v}, \vec{w}) $$
+
+
+### 다른 몇가지 법칙
+1. Determinant $det(\vec{u}, \vec{v}, \vec{w})$는 _basis_ 가 될 때만 0이 아니다.
+2. Determinant $det(\vec{u}, \vec{v}, \vec{w})$는 $\vec{u}, \vec{v}, \vec{w}$의 sign이 0보다 클 때만 양수다.
+3. vector들의 순서는 determinant 값을 바꾸지 않는다. 
+   $$det(\vec{u}, \vec{v}, \vec{w}) = det(\vec{w}, \vec{u}, \vec{v}) = det(\vec{v}, \vec{w}, \vec{u})$$
+4. vector들의 순서가 바뀌면 determinant의 부호가 바뀌지만 크기는 그대로이다. 
+ $$det(\vec{u}, \vec{v}, \vec{w}) = -det(\vec{w}, \vec{v}, \vec{u}) = -det(\vec{v}, \vec{u}, \vec{w}) = -det(\vec{u}, \vec{w}, \vec{v})$$
+5. 한 vector의 부호가 바뀌면 determinant의 부호가 바뀐다. 
+ $$det(\vec{u}, \vec{v}, \vec{w}) = -det(-\vec{u}, \vec{v}, \vec{w}) = -det(\vec{u}, -\vec{v}, \vec{w}) = -det(\vec{u}, \vec{v}, -\vec{w})$$
+6. 한 vector에 scalar $c$를 곱하면 determinant 값도 scalar $c$만큼 커진다. 
+ $$det(c\vec{u}, \vec{v}, \vec{w}) = det(\vec{u}, c\vec{v}, \vec{w}) = det(\vec{u}, \vec{v}, c\vec{w}) = c det(\vec{u}, \vec{v}, \vec{w})$$
+7. 오른손 법칙을 따르는 orthonormal space의 basis vector들은 unit determinant를 갖는다.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+# Frame
+---
+Affine Space $\mathcal{A}$ 가 점의 집합 $\mathcal{P}$와 dimentsion이 $n$인 vector의 집합 $\mathcal{V}$로 이루어져있을 때, 임의의 점 $\mathcal{O} \in \mathcal{P}$와 basis $\vec{v}_1, \vec{v}_2, \dots \vec{v}_n \in \mathcal{V}$를 골랐을 때 이 형태를 $\mathcal{A}$의 _frame_ 이라고 부르고 아래와 같이 표기한다
+$$ \mathcal{F} = (\vec{v}_1, \vec{v}_2, \dots, \vec{v}_n, \mathcal{O})^T $$
+
+이 때, $\mathcal{V}$ 안에 있는 vector는 basis들의 linear combination으로 표현할 수 있다.
+$$\vec{u} = a_1\vec{v}_1 + a_2\vec{v}_2 + \dots + a_n\vec{v}_n$$
+여기서 basis $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_n$에 의해 $a_1, a_2, \dots, a_n$은 $\vec{u}$의 _coordinates_ 가 된다.
+vector space에서 $\mathcal{Q} = P + \vec{u}$는 유일한데 이 때 $P$를 $\mathcal{F}$에 있는 $\mathcal{O}$로 가져오게 되면 $\mathcal{Q}$는 $\mathcal{O}$에 $\vec{u} = a_1\vec{v}_1 + a_2\vec{v}_2 + \dots + a_n\vec{v}_n$를 더한 것으로 정의할 수 있고 $\mathcal{Q}$의 coordinate는 $a_1, a_2, \dots, a_n$에 대응된다.
+
+### Cartesian Frame
+모든 basis가 orthonomal(모두 unit하고 perpendicular)한 Euclidean space의 Frame을 _Cartesian frame_ 이라고 한다.
