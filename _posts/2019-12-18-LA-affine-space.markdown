@@ -1,7 +1,7 @@
 ﻿---
 title: "[Linear Algebra]Affine Sapce"
 layout: post
-date: 2019-11-18 14:08
+date: 2019-12-18 14:08
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -89,14 +89,14 @@ _dot product_ 라고 알려져 있고 _inner product_ 라고도 부른다. 특�
 
 위 그림에서 우리는 두 가지 요소를 볼 수 있다.
 
-* $\vec{v}_\perp$ : $\vec{u}$에 수직인 $\vec{v}$의 요소로 _normal component_ 라고 부른다
-* $\vec{v}_\parallel$ : $\vec{u}$와 평행인 $\vec{v}$의 요소로 _orthogonal projection_ 이라고 부른다.
+* $\vec{v}_{\perp}$ : $\vec{u}$에 수직인 $\vec{v}$의 요소로 _normal component_ 라고 부른다
+* $\vec{v}_{\parallel}$ : $\vec{u}$와 평행인 $\vec{v}$의 요소로 _orthogonal projection_ 이라고 부른다.
 
 여기서 볼 수 있는 성질은 아래와 같다.
 
-* $\vec{v}_\perp + \vec{v}_\parallel = \vec{v}$
-* $||\vec{v}_\perp|| = ||\vec{v}|||\sin\theta|$
-* $||\vec{v_\parallel}|| = ||\vec{v}|||\cos\theta|$
+* $\vec{v}_{\perp} + \vec{v}_{\parallel} = \vec{v}$
+* $||\vec{v}_{\perp}|| = ||\vec{v}|||\sin\theta|$
+* $||\vec{v_{\parallel}}|| = ||\vec{v}|||\cos\theta|$
 * $\vec{v}_{||} = ||\vec{v}||\cos\theta\hat{u}$, $\hat{u}$는 unit vector이고 값은 $\frac{\vec{u}}{||\vec{u}||}$
 
 &nbsp;&nbsp;&nbsp;&nbsp;
