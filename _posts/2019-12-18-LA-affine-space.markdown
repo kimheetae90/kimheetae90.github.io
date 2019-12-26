@@ -94,7 +94,8 @@ _dot product_ 라고 알려져 있고 _inner product_ 라고도 부른다. 특�
 
 여기서 볼 수 있는 성질은 아래와 같다.
 
-* $\vec{v}_{\perp} + \vec{v}_{\parallel} = \vec{v}$
+* $\vec{v}_{\perp}$ + 
+$\vec{v}_{\parallel}$ = $\vec{v}$
 * $\|\|\vec{v}_{\perp}\|\| = \|\|\vec{v}\|\|\|\sin\theta\|$
 * $\|\|\vec{v_{\parallel}}\|\| = \|\|\vec{v}\|\|\|\cos\theta\|$
 * $\vec{v}_{\parallel} = \|\|\vec{v}\|\|\cos\theta\hat{u}$, $\hat{u}$는 unit vector이고 값은 $\frac{\vec{u}}{\|\|\vec{u}\|\|}$
@@ -118,7 +119,7 @@ $\vec{0}\cdot\vec{0} = 0$
 
 1. Squared length : $\vec{u}\cdot\vec{u} = \|\|\vec{u}\|\|^{2}$
 2. Angle : $\theta = cos^{-1}\frac{\vec{u}\cdot\vec{v}}{\|\|\vec{u}\|\|\|\|\vec{v}\|\|}$
-3. Projection : $\vec{v}_{\paraller} = \frac{(\vec{u}\cdot\vec{v})\vec{u}}{\vec{u}\cdot\vec{u}}$
+3. Projection : $\vec{v}_{\parallel} = \frac{(\vec{u}\cdot\vec{v})\vec{u}}{\vec{u}\cdot\vec{u}}$
 4. Normal : $\vec{v}_\perp = \vec{v} - \frac{(\vec{u}\cdot\vec{v})\vec{u}}{\vec{u}\cdot\vec{u}}$
 5. Perpendicular : $\vec{u}\cdot\vec{v} = 0 \Longleftrightarrow \vec{u} \perp \vec{v}$
 
