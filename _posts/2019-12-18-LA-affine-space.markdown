@@ -94,7 +94,7 @@ _dot product_ 라고 알려져 있고 _inner product_ 라고도 부른다. 특�
 
 여기서 볼 수 있는 성질은 아래와 같다.
 
-* $\vec{v}_ {\perp}$ + \vec{v}_{\parallel} = \vec{v}$
+* $\vec{v}_ {\perp} + \vec{v}_{\parallel} = \vec{v}$
 * $\|\|\vec{v}_{\perp}\|\| = \|\|\vec{v}\|\|\|\sin\theta\|$
 * $\|\|\vec{v_{\parallel}}\|\| = \|\|\vec{v}\|\|\|\cos\theta\|$
 * $\vec{v}_{\parallel} = \|\|\vec{v}\|\|\cos\theta\hat{u}$, $\hat{u}$는 unit vector이고 값은 $\frac{\vec{u}}{\|\|\vec{u}\|\|}$
