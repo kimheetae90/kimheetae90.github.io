@@ -154,11 +154,11 @@ vector product를 통해 평행사변형의 넓이를 구한 것과 같이 평�
 $$
 \begin{aligned}
     Vol(\vec{u}, \vec{v}, \vec{w}) &=  base \times height & (정의)\\
-                                   &=  \|\|\vec{u}\|\| \|\|\vec{v}\|\| \sin\psi \times \|\|\vec{w}\|\| \|\cos\theta\| & (삼각법) \\
-                                   &= \|\|\vec{u}\|\| \|\|\vec{v}\|\| \sin\psi \centerdot \|\|\vec{w}_\parallel\|\| & (Dot Product) \\
-                                   &= \|\|\vec{u} \times \vec{v}\|\| \centerdot \|\|\vec{w}_\parallel\|\| & (Cross Product) \\
-                                   &= \|\|\vec{u} \times \vec{v} \centerdot \vec{w}_\parallel\|\| & (길이) \\
-                                   &= \|\|\vec{u} \times \vec{v} \centerdot \vec{w}\|\| & (길이) \\
+                                   &=  \|\vec{u}\| \|\vec{v}\| \sin\psi \times \|\vec{w}\| |\cos\theta| & (삼각법) \\
+                                   &= \|\vec{u}\| \|\vec{v}\| \sin\psi \centerdot \|\vec{w}_\parallel\| & (Dot Product) \\
+                                   &= \|\vec{u} \times \vec{v}\| \centerdot \|\vec{w}_\parallel\| & (Cross Product) \\
+                                   &= \|\vec{u} \times \vec{v} \centerdot \vec{w}_\parallel\| & (길이) \\
+                                   &= \|\vec{u} \times \vec{v} \centerdot \vec{w}\| & (길이) \\
 \end{aligned}    
 $$
 
@@ -176,7 +176,7 @@ $$
 
 $$
 sgn(\vec{u}, \vec{v}, \vec{w}) =
- sgn(\vec{u}, \vec{v}, \vec{w}{||})= 
+ sgn(\vec{u}, \vec{v}, \vec{w}_{||})= 
 \begin{cases}
  +1 & \Longleftrightarrow \vec{w}{\parallel} \parallel \vec{u}\times\vec{v} \\ -1 & \Longleftrightarrow \vec{w}_{\parallel} \parallel -\vec{u}\times\vec{v} \ 
  \end{cases} 
@@ -211,12 +211,12 @@ $$ Vol(\vec{u}, \vec{v}, \vec{w}) = |det(\vec{u}, \vec{v}, \vec{w})| = sgn(\vec{
 
 # Frame
 ---
-Affine Space $\mathcal{A}$ 가 점의 집합 $\mathcal{P}$와 dimentsion이 $n$인 vector의 집합 $\mathcal{V}$로 이루어져있을 때, 임의의 점 $\mathcal{O} \in \mathcal{P}$와 basis $\vec{v}_1, \vec{v}_2, \dots \vec{v}_n \in \mathcal{V}$를 골랐을 때 이 형태를 $\mathcal{A}$의 _frame_ 이라고 부르고 아래와 같이 표기한다
+Affine Space $\mathcal{A}$ 가 점의 집합 $\mathcal{P}$와 dimentsion이 $n$인 vector의 집합 $\mathcal{V}$로 이루어져있을 때, 임의의 점 $\mathcal{O} \in \mathcal{P}$와 basis $\vec{v}_ 1, \vec{v}_ 2, \dots \vec{v}_ n \in \mathcal{V}$를 골랐을 때 이 형태를 $\mathcal{A}$의 _frame_ 이라고 부르고 아래와 같이 표기한다
 $$ \mathcal{F} = (\vec{v}_1, \vec{v}_2, \dots, \vec{v}_n, \mathcal{O})^T $$
 
 이 때, $\mathcal{V}$ 안에 있는 vector는 basis들의 linear combination으로 표현할 수 있다.
 $$\vec{u} = a_1\vec{v}_1 + a_2\vec{v}_2 + \dots + a_n\vec{v}_n$$
-여기서 basis $\vec{v}_1, \vec{v}_2, \dots, \vec{v}_n$에 의해 $a_1, a_2, \dots, a_n$은 $\vec{u}$의 _coordinates_ 가 된다.
+여기서 basis $\vec{v}_ 1, \vec{v}_ 2, \dots, \vec{v}_ n$에 의해 $a_ 1, a_ 2, \dots, a_ n$은 $\vec{u}$의 _coordinates_ 가 된다.
 vector space에서 $\mathcal{Q} = P + \vec{u}$는 유일한데 이 때 $P$를 $\mathcal{F}$에 있는 $\mathcal{O}$로 가져오게 되면 $\mathcal{Q}$는 $\mathcal{O}$에 $\vec{u} = a_1\vec{v}_1 + a_2\vec{v}_2 + \dots + a_n\vec{v}_n$를 더한 것으로 정의할 수 있고 $\mathcal{Q}$의 coordinate는 $a_1, a_2, \dots, a_n$에 대응된다.
 
 ### Cartesian Frame
