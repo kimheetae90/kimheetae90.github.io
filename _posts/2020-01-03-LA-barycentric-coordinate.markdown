@@ -20,7 +20,7 @@ Affine Space 상에 있는 어떠한 점의 좌표는 Vector Space 하에 점 $O
 $$
 \begin{aligned}
     Q = & \vec{u} + \mathcal{O} \\
-    =  &a_1\vec{v}_1 + a_2\vec{v}_2 + \dotsi + a_n\vec{v}_n + \mathclap{O}
+    =  &a_1\vec{v}_1 + a_2\vec{v}_2 + \dotsi + a_n\vec{v}_n + \mathcal{O}
 \end{aligned}
 $$
 
