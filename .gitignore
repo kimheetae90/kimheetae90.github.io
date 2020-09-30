@@ -1,27 +1,17 @@
-# Idea files
-.idea/*
+# hidden files
+.*
 
-# Mac files
-.DS_Store
+# python compiled files
+*.pyc
 
-# Byte-compiled / optimized / DLL files
-*.manifest
-*.spec
+# jekyll debug
+_site
 
-# Jekyll dev or build files
-_site/*
-_development_tool/*
-.sass-cache/*
-*.css.map
-*.scssc
-
-# Theme Gem files
+# Jeykll Gemfile.lock
 Gemfile.lock
-*.gem
-.gems
-jekyll-theme-type-on-strap.gemspec
 
-# Node js files
-**/node_modules/*
-*-test.md
-*copy.md
+# yui-compressor
+*.jar
+
+# bundle cache
+vendor
