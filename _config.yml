@@ -20,7 +20,7 @@ description: >-                        # used by seo meta and the atom feed
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://kimheetae90.github.io'
 
-author: Kim Heetae                  # change to your full name
+author: KimHeetae                  # change to your full name
 
 avatar: /assets/img/sample/avatar.jpg   # support internet resources
 
@@ -28,7 +28,7 @@ github:
   username: kimheetae90             # change to your github username
 
 social:
-  name: Kim Heetae                  # it will shows as the copyright owner in Footer
+  name: KimHeetae                  # it will shows as the copyright owner in Footer
   email: kimheetae90@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
