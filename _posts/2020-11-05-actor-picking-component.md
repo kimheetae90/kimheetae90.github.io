@@ -15,11 +15,11 @@ Component를 제작하기 언리얼엔진에서 Picking을 하기 위해 프로�
 
 Input을 받기 위해서는 프로젝트 세팅에서 입력탭에서 액션을 매핑해줘야한다. 이 포스팅에서는 마우스 왼쪽 Press로 Actor를 집고 Release하면 놓아지는 구현을 할 것이다. 따라서 마우스 왼쪽버튼에 Picking이라는 액션을 생성하겠다.
 
-!['Input Setting'](/assets/resource/2020-11-05-actor-picking-component/input.png)
+![](/assets/resource/2020-11-05-actor-picking-component/input.PNG)
 
 다음은 Picking할 때 Actor를 식별하기위한 세팅인데 사실 이것은 구현하기 나름이다. 원한다면 Trace Channel말고 직접 LineTrace에 걸린 Actor의 프로퍼티를 검사해서 찾아낼 수도 있을 것이지만 이 포스팅에서는 Trace Channel을 사용했다. Pickable이라는 Channel을 생성한다. Pick을 원하는 Actor만 설정해줄 것이기 때문에 기본을 Ignore로 설정한다.
 
-!['Trace Channel Setting'](/assets/resource/2020-11-05-actor-picking-component/tracechannel.png)
+![](/assets/resource/2020-11-05-actor-picking-component/tracechannel.PNG)
 
 #### 2. PlayerController
 
@@ -55,13 +55,13 @@ void APickingPlayerController::OnMouseUp()
 
 처음 시작하면 기본 레벨이 띄워져있다. 여기에 자신이 원하는 액터를 씬에 한개 배치한다. 큐브를 배치해보겠다. 이 큐브는 Pick이 될 Actor이기 때문에 콜리전세팅에서 Pickable을 block으로 바꿔줘야한다.
 
-!['Collision 세팅'](/assets/resource/2020-11-05-actor-picking-component/collisionsetting.png)
+![](/assets/resource/2020-11-05-actor-picking-component/collisionsetting.PNG)
 
 그리고 Picking을 할 때 기준이 될 카메라를 배치하겠다. 대충 TopView처럼 보이기위해 -75도정도 회전시키고 상단에 배치하겠다. 그리고 디테일창에서 Auto Player Activation에 Player 0번을 세팅해준다.
 
-!['카메라 세팅'](/assets/resource/2020-11-05-actor-picking-component/cameradetail.png)
+![](/assets/resource/2020-11-05-actor-picking-component/cameradetail.PNG)
 
-!['카메라 세팅 화면'](/assets/resource/2020-11-05-actor-picking-component/cameraplay.png)
+![](/assets/resource/2020-11-05-actor-picking-component/cameraplay.PNG)
 
 
 ## Component 기능 구현
@@ -160,7 +160,7 @@ void APickingPlayerController::OnMouseUp()
 
 이제 컴파일을 한 후 큐브를 선택하면 출력창에 로그가 뜰 것이다.
 
-!['Picking 확인'](/assets/resource/2020-11-05-actor-picking-component/picklog.png)
+![](/assets/resource/2020-11-05-actor-picking-component/picklog.PNG)
 
 
 ## Picking 중 Actor 이동시키기
@@ -321,19 +321,19 @@ void APickingPlayerController::OnPicking(AActor* inPickedObject)
 
 위에서 OnPicking함수에 GetHitResultUnderCursor 파라미터로 ECC_GameTraceChannel2로 넣어주었는데 Pick 시 바닥이 될 Actor의 채널이다. 이를 추가해주자.
 
-!['바닥 TraceChannel 추가'](/assets/resource/2020-11-05-actor-picking-component/pickpanel.png)
+![](/assets/resource/2020-11-05-actor-picking-component/pickpanel.PNG)
 
 Level상에 있는 Floor 액터를 아웃라이너에서 찾아서 위에서 만든 Trace Channel을 켜준다. 
 
-!['Floor 콜리젼 변경'](/assets/resource/2020-11-05-actor-picking-component/floorcollision.png)
+![](/assets/resource/2020-11-05-actor-picking-component/floorcollision.PNG)
 
 그리고 추가했던 큐브는 움직여야하기 떄문에 무버블로 변경해준다.
 
-!['무버블'](/assets/resource/2020-11-05-actor-picking-component/movable.png)
+![](/assets/resource/2020-11-05-actor-picking-component/movable.PNG)
 
 이제 큐브를 잡고 이동할 수 있게 되었다.
 
-!['무버블'](/assets/resource/2020-11-05-actor-picking-component/pickingmove.gif)
+![](/assets/resource/2020-11-05-actor-picking-component/pickingmove.gif)
 
 만약 저 큐브가 캐릭터였다면 OnPickStart에서 애니메이션을 다르게 플레이하거나 메테리얼 색을 변경할수도 있을것이며 OnPicking에서 위치를 조절할 수도 있을 것이다. 만약 UI가 있다면 PlayerController에 선언된 PickActorComponent에 선택된 Actor의 이름을 출력하는 기능도 PickActorComponent를 수정하지 않고 추가할 수 있을 것이다.
 
