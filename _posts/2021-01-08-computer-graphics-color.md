@@ -19,7 +19,11 @@ tag : [Graphics, Color]
 컴퓨터 모니터에 사용되는 색상은 Red, Green, Blue로 구성된다. R,G,B의 함수로 색을 만드는 것을 **Color Matching**이라고 한다.
 하지만 실제로 모든 자연색을 표현할 수 없어서 **CIE** 위원회에서 3개의 가상원색을 설정해 모든 자연색을 만들 수 있도록 모델링했다. 표현할 수 있는 색을 망라한 것을 **색 범주(Color Gamut)** 이라 하는데 아래 그림은 CIE색범주이다
 ![](/assets/resource/2021-01-08-computer-graphics-color/colormatching.png)
-----
+
+<br/>
+---
+<br/>
+
 # Color Model
 ### RGB Color Model
 삼중 자극 이론에 따라 x,y,z축을 R,G,B로 놓고 색을 표현하는 Model. **Red, Green, Blue**가 삼원색이다. 가산모델(삼원색을 더해 다른 색을 만듬)이고 일반적인 컬러모니터는 RGB Model을 사용한다.
@@ -34,7 +38,11 @@ tag : [Graphics, Color]
 ### HSV ColorModel
 **색상(Hue), 채도(Saturation), 명도(Value,Brightness)** 로 색을 표현하는 Model. 
 ![](/assets/resource/2021-01-08-computer-graphics-color/HSVColorModel.png)
-----
+
+<br/>
+---
+<br/>
+
 # Color Mode
 ### RGB Color Mode
 프레임 버퍼 내용이 **R,G,B값을 직접 담아** 표현하는 방법. 화소당 비트 수는 컬러의 정밀도와 직결된다.
