@@ -14,6 +14,9 @@ url: https://kimheetae90.github.io/
 permalink: /:title/
 markdown: kramdown
 highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 kramdown:
   auto_ids: true
   footnote_nr: 1
