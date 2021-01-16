@@ -38,11 +38,7 @@ v = 4V1 + 2V2 + V3 + 0*r (4,2,1,0)
 p = 4V1 + 2V2 + V3 + 1*r (4,2,1,1)
 마지막 요소가 0이면 벡터, 그렇지 않으면 점을 의미한다.
 
-$$
-\lim_{x\to 0}{\frac{e^x-1}{2x}}
-\overset{\left[\frac{0}{0}\right]}{\underset{\mathrm{H}}{=}}
-\lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}
-$$
+\\[ \frac{1}{n^{2}} \\]
 
 <br/>
 
