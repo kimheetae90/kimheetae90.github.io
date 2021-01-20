@@ -268,8 +268,8 @@ void gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble atx, GLdoub
 
 카메라 위치를 정의하면 시점 좌표계로 변환되므로 아래와 같은 관계가 성립된다.
 
-$P_{wcs} = M \cdot P_{mcs}$
-$P_{vcs} = V \cdot P_{wcs} = V \cdot M \cdot P_{mcs}$
+$$P_{wcs} = M \cdot P_{mcs}$$
+$$P_{vcs} = V \cdot P_{wcs} = V \cdot M \cdot P_{mcs}$$
 
 실제로 사용할 때에는 모델 뷰 행렬은 하나로 정의되므로 행렬을 초기화 한 직 후에 정의해야한다.
 
