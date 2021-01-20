@@ -34,8 +34,9 @@ $$ V = (1-t)P + (t)Q $$
 
 ### 동차좌표
 벡터와 점을 구분해 사용하기 위해 3차원의 좌표를 4차원으로 올려서 표현하는 것을 **동차 좌표(Homogeneous Coordinates)** 라 한다.
-$v = 4V_1 + 2V_2 + V_3 + 0*r \rightarrow (4,2,1,0)$
-$v = 4V_1 + 2V_2 + V_3 + 1*r \rightarrow (4,2,1,1)$
+
+$$v = 4V_1 + 2V_2 + V_3 + 0*r \rightarrow (4,2,1,0)$$
+$$v = 4V_1 + 2V_2 + V_3 + 1*r \rightarrow (4,2,1,1)$$
 
 마지막 요소가 0이면 벡터, 그렇지 않으면 점을 의미한다.
 
@@ -46,6 +47,7 @@ $v = 4V_1 + 2V_2 + V_3 + 1*r \rightarrow (4,2,1,1)$
 
 ### 이동 변환(Translatinal Tranformation)
 ![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/translate.PNG)
+
 $$
 \begin{bmatrix}  x' \\ y' \\ z' \\ 1  \end{bmatrix}  = 
 \begin{bmatrix}
@@ -56,6 +58,7 @@ $$
   \end{bmatrix}
   \begin{bmatrix}  x \\ y \\ z \\ 1  \end{bmatrix}
 $$
+
 x,y,z를 $T_x, T_y, T_z$씩 이동하는 행렬이다.
 
 ### 회전(Rotation Transformation)
@@ -72,6 +75,7 @@ $$
   \end{bmatrix}
   \begin{bmatrix}  x \\ y \\ z \\ 1  \end{bmatrix}
 $$
+
 * X축을 기준으로 회전
 
 $$
@@ -84,6 +88,7 @@ $$
   \end{bmatrix}
   \begin{bmatrix}  x \\ y \\ z \\ 1  \end{bmatrix}
 $$
+
 * Y축을 기준으로 회전
 
 $$
@@ -100,6 +105,7 @@ $$
 
 ### 크기 조절(Scaling Tranformation)
 ![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/scale.PNG)
+
 $$
 \begin{bmatrix}  x' \\ y' \\ z' \\ 1  \end{bmatrix}  = 
 \begin{bmatrix}
@@ -110,10 +116,12 @@ $$
   \end{bmatrix}
   \begin{bmatrix}  x \\ y \\ z \\ 1  \end{bmatrix}
 $$
+
 x,y,,z 축 별로 $S_x, S_y, S_z$ 배만큼 조절하는 행렬로 모든 배율이 같을 때 균등 크기조절, 하나라도 다르면 차등 크기조절 이라고 한다.
 
 ### 전단
 ![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/shear.PNG)
+
 $$
 \begin{bmatrix}  x' \\ y' \\ z' \\ 1  \end{bmatrix}  = 
 \begin{bmatrix}
@@ -124,6 +132,7 @@ $$
   \end{bmatrix}
   \begin{bmatrix}  x \\ y \\ z \\ 1  \end{bmatrix}
 $$
+
 물체를 x-y평면을 따라 전단한 행렬이다.
 
 ### 복합 변환
@@ -134,6 +143,7 @@ $$ C = T(X_p,Y_p,Z_p) * R_z(\theta) * T(-X_p,-Y_p,-Z_p) $$
 
 ### 반사
 ![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/reflection.PNG)
+
 $$
 \begin{bmatrix}  x' \\ y' \\ z' \\ 1  \end{bmatrix}  = 
 \begin{bmatrix}
@@ -144,6 +154,7 @@ $$
   \end{bmatrix}
   \begin{bmatrix}  x \\ y \\ z \\ 1  \end{bmatrix}
 $$
+
 x-z평면을 기준으로 반사하는 행렬이다.
 
 ### 변환의 분류
@@ -158,16 +169,116 @@ x-z평면을 기준으로 반사하는 행렬이다.
 
 ## 지엘의 모델 변환
 ### 모델 좌표계와 전역 좌표계
+* 모델 좌표계(Modeling Coordinate System) : 물체별로 설계상의 편의를 위주로 설정된 좌표계, 지역 좌표계(Local Coordinate System)이라고도 한다
+* 전역 좌표계(World Coordinate System) : 동일한 위치를 서로 다른 좌표로 부르지 않기 위해서 장면 안에 모든 물체를 한꺼번에 아우를 수 있는 좌표계
+* 시점 좌표계(View Coordinate System) : 시점을 기준으로 정의되는 좌표계
+ 
+![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/localworldviewcoordinate.PNG)
+
+> 지엘에서는 물체의 이동을 좌표계의 이동으로 정의한다. 변환 행렬은 전역좌표계를 모델좌표계로 일치시키기 위한 것
+
 ### 지엘 파이프라인
+![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/glpipeline.PNG)
+
+* Modeling Tranformation : 물체에 대해 이동, 회전, 크기 등 기하 변환을 하는 작업
+* View Transformation : 변환된 물체를 관찰하기 위해 카메라를 이동하고 회전해서 설정하는 작업
+* Projection Transformation : 카메라 렌즈를 선택하고 물체를 2차원으로 변환하는 작업
+* Viewport Transformation : 변환된 2차원 이미지를 줄이거나 늘리는 작업
+
+지엘의 모든 변환은 Transformation Matrix로 대변된다.  지엘에서는 Modeling Transformation과 View Transformation을 합쳐서 **Model-View Trnaformation** 이라고 부르는데 이 때의 행렬을 ModelView Matrix라고 한다.
+
 ### 모델 변환
+지엘에는 변환의 종류별로 행렬이 따로 존재하는데 모델 뷰 행렬, 투상 행렬, 텍스쳐 행렬이 있다. 이를 선택하기 위해서는 **행렬 모드(Matrix Mode)** 를 설정해야한다. 들어갈 수 있는 상수로는 GL_MODELVIEW, GL_PROJECTION, GL_TEXTURE 가 있다.
+
+```c++
+void glMatrixMode(GLenum mode);
+```
+
+행렬 모드를 정하고 원하는 변환을 하게 되면 행렬 모드에 해당하는 스택에 쌓이게 된다. **현 변환 행렬(CTM : Current Transformation Matrix)** 가 스택의 행렬들의 값이 된다. 처음에는 CTM을 초기화하고 그 이후 원하는 값을 곱한다
+```c++
+void glLoadIdentity(); // 현 변환 행렬을 항등 행렬로 초기화한다.
+void glLoadMatrixf(const GLfloat *M); // 행렬을 현 변환 행렬로 바꾼다.
+void glMultMatrixf(const GLfloat *M);	// 현 변환 행렬에 입력값을 곱한다.
+```
+
+위 함수보다 편하게 값을 추가할 수 있는 방법은 아래와 같다.
+```c++
+void glTranslatef(GLfloat dx, GLfloat dy, GLfloat dz); 
+void glScalef(GLfloat sx, GLfloat sy, GLfloat sz); 
+void glRotatef(GLfloat angle, GLfloat x, GLfloat y, GLfloat z);	
+```
+
+
 ### 복합 변환에 의한 모델링
+아래 코드는 2가지 관점에서 생각할 수 있다
+```c++
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity();
+glRotatef(45,0.0,.0.,1.0);
+glTranslatef(10.0, 0.0, 0.0);
+glVertex3f(Px,Py,Pz);
+```
+* 물체의 변환 : 고정된 전역 좌표계를 기준으로 물체를 움직임. 물체가 이미 전역좌표계에 있다고 가정하고 전역좌표계 기준으로 변환
+
+![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/matrixoperation1.PNG)
+
+* 좌표계의 변환 : 모델 좌표계를 변환. 모델좌표계를 변환한 후에 모델좌표계 기준으로 물체를 그리지만 모델좌표계에 변환을 가함
+
+![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/matrixoperation2.PNG)
+
+
 ### 행렬 스택 활용
+지엘은 단순 행렬을 하나만 제공하는 것이 아니고 **행렬 스택(Matrix Stack)** 을 제공한다.
+```c++
+void glPushMatrix();
+void glPopMatrix();
+```
+현 변환 행렬은 항상 위에 있고 푸시가 될 때마다 복사되어 스택에 쌓이게 된다. 예시 과정은 아래 그림과 같다.
+![](/assets/resource/2021-01-16-computer-graphics-modelviewtranform/matrixstack.PNG)
+
+
 ### 계층 구조 모델링
+사람 관절이나 태양계처럼 물체(Object)간의 상하 관계를 **계층 구조** 로 설정할 때가 있다. 이 구조는 위에서 언급한 행렬 스택을 이용해 구현할 수 있다.
+* Forward Kinematics(FK) : 계층 구조의 상위에서 하위로 내려오며 각도를 회전해 원하는 자세를 만드는 방법.
+* Inverse Kinematics(IK) : 계층 구조의 최하위에 있는 물체 위치를 명시하면 상위 계층의 움직임을 자동으로 계산하는 방법.  IK의 해는 여러개가 될 수 있으므로 **제약 조건(Constrains)** 를 걸어둘 수 있다.
+
 
 <br/>
 
 ## 지엘의 시점 변환
+시점은 물체를 바라보는 위치로 카메라 위치와 동일하다. 모델 좌표계에서 전역 좌표계로 변환 시 모델 행렬을 곱하는 것처럼 전역 좌표계에서 시점 좌표계로 변환 시 뷰 행렬을 곱하면 되지만 지엘에서는 모델 행렬과 뷰 행렬을 하나로 취급하여 모델 뷰 행렬이라고 표현한다.
+
 ### 시점 좌표계 설정
+PHIGS 시점 좌표계 : 투상면에 수직인 벡터 VPN(View Plane Normal)와 카메라 위쪽을 향하는 벡터(Veiw Up Vector) 와 시점 좌표계의 원점 VRP(View Reference Point) 등으로 정의 된다.
+
 ### 지엘의 시점 좌표계
+PHIGS보다 제약되었지만 더 직관적인 인터페이스를 제공한다.
+
+_지엘의 시점좌표계의 3요소_
+* 카메라 위치
+* 초점의 위치
+* 카메라의 기울임
+
+> 카눕혀서 찍을 수도 있지만 세워서 찍을 수도 있기 때문에 카메라의 기울임도 고려해야 한다.
+
+```c++
+void gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble atx, GLdouble aty, GLdouble atz, GLdouble upx, GLdouble upy, GLdoubpe upz);
+```
+카메라 위치(eyex, eyey, eyez)와 초점(atx, aty, atz)와 기울임이 되는 up vector(upx, upy, upz)를 넣어서 카메라를 정의한다.
+
+카메라 위치를 정의하면 시점 좌표계로 변환되므로 아래와 같은 관계가 성립된다.
+
+$P_{wcs} = M \cdot P_{mcs}$
+$P_{vcs} = V \cdot P_{wcs} = V \cdot M \cdot P_{mcs}$
+
+실제로 사용할 때에는 모델 뷰 행렬은 하나로 정의되므로 행렬을 초기화 한 직 후에 정의해야한다.
+
+```c++
+glMatrixMode(GL_MODELVIEW);
+glLoadIdentity(); // 초기화
+gluLookAt(0.2, 0.0, 0.0, 0.0, 0.0, -100.0, 1.0, 1.0, 0.0); // 뷰 행렬
+glRotatef(45, 0.0, 1.0, 0.0); // 모델 행렬
+glutWireCube(1.0);
+```
 
 <br/>
