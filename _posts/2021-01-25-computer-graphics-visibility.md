@@ -1,5 +1,5 @@
 ---
-title : "[Graphics]모델 변환과 시점 변환"
+title : "[Graphics]가시성 판단"
 layout: post
 author: Kim heetae
 mathjax: true
@@ -22,11 +22,14 @@ $$
 
 ### 벡터의 내적과 외적
 * 내적 : 벡터 간 방향을 얻고 싶을 때 주로 사용되고 결과는 스칼라값으로 나온다.
+
  $$s \cdot t = \vert s \vert \vert t \vert \cos{\theta} = s_{x}t_{x} + s_{y}t_{y} + s_{z}t_{z}$$
 
 * 외적 : 평면에 수직인 벡터를 법선 벡터라고 하는데 n은 s와 t가 이루는 평면의 법선벡터이다. 외적의 결과는 벡터이며 외적벡터의 크기는 평행사변형의 넓이에 해당한다.
+
 $$ s \times t = \vert s \vert \vert t \vert \sin{\theta} n
 \\ = (s_y t_z - s_z t_y , -s_x t_z + s_z t_x, s_x t_y - s_y t_x)$$
+
 
 ### 평면 표현
 평면의 법선벡터가 $(A,B,C)$ 라 할 때 평면은 아래와 같이 표현할 수 있다.
@@ -34,7 +37,7 @@ $$Ax + By + Cz + D = 0$$
 이 때 D 값에 따라서 여러 개의 나란한 평면이 생성될 수 있다.
 
 ### 지엘의 법선 벡터
-![](/assets/resource/2021-01-16-computer-graphics-visibility/normalvectorccw.PNG)
+![](/assets/resource/2021-01-25-computer-graphics-visibility/normalvectorccw.PNG)
 
 정점을 명시하는 순서에 따라 법선 벡터의 방향이 좌우된다. 지엘에서는 **반시계 방향(CCW : Counter ClockWise direction)** 으로 정의된다.
 
