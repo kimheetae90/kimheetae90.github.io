@@ -37,7 +37,7 @@ $$Ax + By + Cz + D = 0$$
 이 때 D 값에 따라서 여러 개의 나란한 평면이 생성될 수 있다.
 
 ### 지엘의 법선 벡터
-![](/assets/resource/2021-01-25-computer-graphics-visibility/normalvectorccw.PNG)
+![](/assets/resource/2021-01-25-computer-graphics-visibility/normalvectorccw.png)
 
 정점을 명시하는 순서에 따라 법선 벡터의 방향이 좌우된다. 지엘에서는 **반시계 방향(CCW : Counter ClockWise direction)** 으로 정의된다.
 
@@ -47,7 +47,7 @@ $$Ax + By + Cz + D = 0$$
 
 물체로부터 시점으로 향하는 벡터를 시점벡터 라고 했을 떄 시점벡터 N과 법선벡터 V를 통해 Backface인지 여부를 판단할 수 있다.
 
-$Backface = (N \cdot V < 0) = (\vert N \vert \vert V \vert \cos\theta < 0)$
+$$Backface = (N \cdot V < 0) = (\vert N \vert \vert V \vert \cos\theta < 0)$$
 
 > 정규화 가시 부피 공간에서는 시점 벡터가 z 성분만 갖고 있으므로 법선 벡터의 z값만으로 Backface를 찾을 수 있다. 따라서 후면제거는 투상 행렬을 가한 후에 이루어진다.
 
