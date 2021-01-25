@@ -37,7 +37,7 @@ $$Ax + By + Cz + D = 0$$
 이 때 D 값에 따라서 여러 개의 나란한 평면이 생성될 수 있다.
 
 ### 지엘의 법선 벡터
-![](/assets/resource/2021-01-25-computer-graphics-visibility/normalvectorccw.PNG)
+![](/assets/resource/2021-01-25-computer-graphics-visibility/normalvectorccw.png)
 
 정점을 명시하는 순서에 따라 법선 벡터의 방향이 좌우된다. 지엘에서는 **반시계 방향(CCW : Counter ClockWise direction)** 으로 정의된다.
 

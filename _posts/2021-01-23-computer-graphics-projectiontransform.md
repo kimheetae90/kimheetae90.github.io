@@ -16,12 +16,12 @@ tag : [Graphics, Transfrom]
 
 으로 이루어져 있다.
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/projection.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/projection.PNG)
 
 ### 평행 투상
 투상선이 나란한 투상법. 거리와 무관하게 같은 길이로 투상된다.
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/orthographic.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/orthographic.PNG)
 
 * 정사 투상
 투상선과 투상면이 직교하고 주 평면중 하나와 투상면이 나란하다. 평면도, 입면도, 측면도 등에 사용
@@ -34,7 +34,7 @@ tag : [Graphics, Transfrom]
 
 ### 원근 투상
 시점과 물체가 유한한 거리에 있다고 간주하고 투상선이 시점으로부터 방사선 모양으로 퍼져나가는 투상법. 실제 카메라나 눈에 적합하고 원근감이 느껴진다.
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/perspective.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/perspective.PNG)
 
 > 어파인 변환과 원근 변환의 공통점은 각,거리가 보존되지 않는 것이다. 다만 원근 변환은 물체 정점간 거리에 대한 축소율이 달라진다.
 
@@ -75,7 +75,7 @@ $$
 
 * 정규화 가시 부피에 의한 투상
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/viewplane.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/viewplane.PNG)
 
 투상 범위를 제한해야 해서 **가시 부피(View Volume)** 이라는 투상 범위를 정한다. 이 때, 시점과 가까운 쪽을 Near Clipping Plane, 먼 쪽을 Far Clipping Plane 이라고 한다. 가시 부피 밖에 있으면 절단(Clipping) 된다.
 
@@ -88,7 +88,7 @@ void glOrtho(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdou
 ```
 지엘에서는 가시 부피를 가로,세로,높이가 2인 정육면체로 **정규화 변환(Normalization Transformation)** 해서 사용한다.
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/normalizationtransform.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/normalizationtransform.PNG)
 
 이 결과를 **정규화 가시 부피(CCV : Canonical View Volume)** 이라고 한다.  정규화 가시 부피의 주의할 점은 좌표계를 왼손 법칙을 사용한다는 것이다.
 
@@ -116,7 +116,7 @@ $$
 * 기본 투상
 원근 투상의 측면도는 이와 같아서 아래 수식으로 표현된다.
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/perspectiveside.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/perspectiveside.PNG)
 
 $$
 P^{'} = \begin{bmatrix}
@@ -145,7 +145,7 @@ void glFrustum(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLd
 
 * 정규화 가시 부피에 의한 투상
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/normalizedperspective.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/normalizedperspective.PNG)
 
 사각뿔에서 전방 절단면과 후방 절단면에 의해 잘린 **절두체(Frustum)** 
 
@@ -163,9 +163,9 @@ $$
 
 원근 변환에 따른 간격 변화는 옆에서 보면 다음과 같아서 물체간 간격이 비 선형임을 알 수 있다.
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/perspectiveforeshortening1.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/perspectiveforeshortening1.PNG)
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/perspectiveforeshortening2.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/perspectiveforeshortening2.PNG)
 
 아래 함수로 더 손쉽게 선언할 수 있다
 
@@ -175,7 +175,7 @@ void gluPerspective(GLdouble fov, Gldouble aspect, GLdouble near, GLdouble far);
 
 ### 투상 파이프라인
 
-![](/assets/resource/2021-01-16-computer-graphics-projectiontransform/glcoordinatepipeline.PNG)
+![](/assets/resource/2021-01-23-computer-graphics-projectiontransform/glcoordinatepipeline.PNG)
 
 
 ## 지엘의 뷰 포트 변환
