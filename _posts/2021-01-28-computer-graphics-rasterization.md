@@ -82,16 +82,18 @@ ydx = xdy + bdx\\
 f(x,y) = ydx - xdy - bdx = 0 \\
 F(x,y) = 2ydx -2xdy -2bdx = 0
 $$
+
 위 식을 기반으로 아래 식을 유도할 수 있다.
  
- $$
- F(x,y) \\
- = F(x_1 + 1, y_1 + 1/2) \\
- = 2(y_1 + 1/2)dx - 2(x_1 + 1)dy - 2bdx\\
- =2y_1dx + dx - 2x_1dy - 2dy - 2dbdx\\
+$$
+F(x,y) \\
+= F(x_1 + 1, y_1 + 1/2) \\
+= 2(y_1 + 1/2)dx - 2(x_1 + 1)dy - 2bdx\\
+=2y_1dx + dx - 2x_1dy - 2dy - 2dbdx\\
 F(x_1, y_1) = 2y_1dx - 2x_1dy - 2bdx = 0 \\
 F(x,y) = F(x_1 + 1, y_1 + 1/2) = dx -2dy
- $$
+$$
+
 이를 결정 변수 D 라고 한다.
 
 ## 다각형의 래스터 변환
