@@ -10,7 +10,7 @@ tag : [Graphics, Transfrom]
 ## 래스터 변환
 래스터(Raster)는 화소(Pixel)을 의미한다. 즉, **래스터 변환(Rasterization)** 은 화소로의 사상을 말한다.
 
-![](/assets/resource/2021-01-16-computer-graphics-visibility/rasterizationinpipeline.PNG)
+![](/assets/resource/2021-01-28-computer-graphics-rasterization/rasterizationinpipeline.PNG)
 
 은면 제거 과정에서 색과 깊이가 모두 사용되므로 뷰 포트 변환 결과의 정점을 대상으로 먼저 가해진다.
 
@@ -98,7 +98,7 @@ F(x,y) = F(x_1 + 1, y_1 + 1/2) = dx -2dy
 
 ### 삼각형의 래스터 변환
 
-![](/assets/resource/2021-01-16-computer-graphics-visibility/triangleinner.PNG)
+![](/assets/resource/2021-01-28-computer-graphics-rasterization/triangleinner.PNG)
 
 * P,Q,R 등 다각형의 모든 정점을 반시계로 정의
 * 선분 $f(x,y) = (y_1 - y_2)x + (x_2 - x_1)y + x_1y_2 - x_2y_1 = 0$를 구할 때 먼저 정의된 정점이 $(x_1, y_1)$ , 나중에 정의된 정점이 $(x_2, y_2)$ 로 대입
@@ -118,7 +118,7 @@ for Each Pixel P at (a,b)
 
 ### 주사선 채움 알고리즘
 
-![](/assets/resource/2021-01-16-computer-graphics-visibility/linefilling.PNG)
+![](/assets/resource/2021-01-28-computer-graphics-rasterization/linefilling.PNG)
 
 다각형의 선분들을 리스트화(선분 리스트:EL) 하고 주사선을 아래에서부터 그린다고 했을 때, 주사선과 만나는 점을 오름차순으로 정렬한다. 그리고 홀수규칙에 의해 칠해진다. 즉, $1 \leq x < 2$, $3 \leq x < 4$ 만 칠하는 방식이다.
 예외로 극대점은 0번 교차 처리, 극소점은 2번 교차 처리, 극대이자 극소점은 한번 교차 처리, 평행한 선분은 없는 처리를 한다.
@@ -186,15 +186,17 @@ V'\\
 = \alpha P + \beta Q + \gamma R\\
 0 \leq \alpha, \beta , \gamma \leq 1 , \alpha + \beta + \gamma = 1
 $$
+
 3점을 혼합하면 삼각형을 표현할 수 있다.
 
-> $$ V = t_1P_1 + t_2P_2 + \dotsb + t_nP_n\\ 0 \leq t_1, t_2, \dotsb,
-> t_n \leq 1, t_1 + t_2 + \dotsb + t_n =1 $$ 일반화하면 n개의 점으로 표현할 수 있다
-> 
-> 위 식을 만족하는 도형을 **컨벡스 헐(Convex Hull)** 이라고 하고 이는 어떤 점이든 항상 컨벡스 헐 내부에
-> 존재한다는 특성이 있다.
+$$ V = t_1P_1 + t_2P_2 + \dotsb + t_nP_n\\ 
+0 \leq t_1, t_2, \dotsb, t_n \leq 1, t_1 + t_2 + \dotsb + t_n =1 
+$$ 
+
+일반화하면 n개의 점으로 표현할 수 있다. 위 식을 만족하는 도형을 **컨벡스 헐(Convex Hull)** 이라고 하고 이는 어떤 점이든 항상 컨벡스 헐 내부에 존재한다는 특성이 있다.
 
 정점을 PQR로 갖는 삼각형의 내부점 V'의 무게중심좌표는 아래와 같이 계산한다.
+
 $$
 \alpha = area(V'QR) / area(PQR) \\
 \beta = area(V'RP) / area(PQR) \\
@@ -221,7 +223,7 @@ $$
 
 ### 양방향 선형 보간
 
-![](/assets/resource/2021-01-16-computer-graphics-visibility/bilinearinterpolation.PNG)
+![](/assets/resource/2021-01-28-computer-graphics-rasterization/bilinearinterpolation.PNG)
 
 위 그림에서 $S, T, V$ 를 순차적으로 아래와 같은 식을 통해 구한다.
 
