@@ -2,6 +2,7 @@
 title : "[UE4]Actor를 Picking하는 Component제작하기"
 layout: post
 author: Kim heetae
+tag : [UE4]
 ---
 
 마우스 Input으로 특정 Actor를 Picking하는 Component를 제작해보겠다. 공부할 겸 모작을 하던 도중 Picking기능이 요구되서 R&D를 한 김에 포스팅을 하게 되었다. 목표는 Picking하는 Component를 만든 후 PlayerController에 생성하고 나서 컴포넌트 외부에서 원하는 로직을 붙일 수 있게 만드는 것이다.(이 포스팅은 Picking에 대한 로직을 다루지 않음.)
