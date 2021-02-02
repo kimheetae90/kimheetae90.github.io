@@ -2,7 +2,7 @@
 title : "[Graphics]컬러 처리"
 layout: post
 author: Kim heetae
-tag : [Graphics, Color]
+tag : [Graphics]
 ---
 > OpenGL로 배우는 3차원 그래픽스 Chapter 03 내용 정리
 

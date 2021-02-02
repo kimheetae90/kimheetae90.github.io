@@ -3,7 +3,7 @@ title : "[Graphics]래스터 변환"
 layout: post
 author: Kim heetae
 mathjax: true
-tag : [Graphics, Transfrom]
+tag : [Graphics]
 ---
 > OpenGL로 배우는 3차원 그래픽스 Chapter 09 내용 정리
 

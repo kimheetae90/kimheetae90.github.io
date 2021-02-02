@@ -3,7 +3,7 @@ title : "[Graphics]모델 변환과 시점 변환"
 layout: post
 author: Kim heetae
 mathjax: true
-tag : [Graphics, Transfrom]
+tag : [Graphics]
 ---
 > OpenGL로 배우는 3차원 그래픽스 Chapter 06 내용 정리
 

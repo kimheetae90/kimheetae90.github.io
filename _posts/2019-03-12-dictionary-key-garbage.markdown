@@ -108,7 +108,7 @@ public class DictionaryEnumTest : MonoBehaviour
 }
 ```
 
-![Add시 가비지 량](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-add-garbage.jpg)
+![Add시 가비지 량](/assets/resource/2019-03-12-Dictionary-Key-Garbage/2019-03-12-add-garbage.jpg)
 int dictionary의 경우는 가비지가 발생하지 않았지만 enum dictionary는 20B의 가비지가 발생했다.
 
 ### 3. TryGetValue
@@ -172,11 +172,11 @@ public class DictionaryEnumTest : MonoBehaviour
 }
 ```
 
-![Dictionary 인스턴스 생성 시 가비지 량](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-trygetvalue-garbage.jpg)
+![Dictionary 인스턴스 생성 시 가비지 량](/assets/resource/2019-03-12-Dictionary-Key-Garbage/2019-03-12-trygetvalue-garbage.jpg)
 int dictionary의 경우는 가비지가 발생하지 않았지만 enum dictionary는 60B의 가비지가 발생했다.
 
 TryGetValue는 가장 빈번할 것으로 예상되는 메서드이다. 실제로 다음과 같은 경우는 거의 없겠지만 이 메서드를 10만번 돌려봤다.
-![TryGetValue 시 가비지 량](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-trygetvalue10-garbage.jpg)
+![TryGetValue 시 가비지 량](/assets/resource/2019-03-12-Dictionary-Key-Garbage/2019-03-12-trygetvalue10-garbage.jpg)
 
 약 5.7MB의 가비지가 발생했다.
 
@@ -254,7 +254,7 @@ public class DictionaryEnumTest : MonoBehaviour
 }
 ```
 
-![수정 결과](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-result-garbage.jpg)
+![수정 결과](/assets/resource/2019-03-12-Dictionary-Key-Garbage/2019-03-12-result-garbage.jpg)
 
 TryGetValue를 10만번 한 코드에서 가비지가 발생하지 않았다!
 

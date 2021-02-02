@@ -3,7 +3,7 @@ title : "[Graphics]가시성 판단"
 layout: post
 author: Kim heetae
 mathjax: true
-tag : [Graphics, Transfrom]
+tag : [Graphics]
 ---
 > OpenGL로 배우는 3차원 그래픽스 Chapter 08 내용 정리
 
