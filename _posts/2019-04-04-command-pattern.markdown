@@ -1,4 +1,4 @@
-﻿---
+---
 title : "[DesignPattern]Command Pattern"
 layout: post
 author: Kim heetae

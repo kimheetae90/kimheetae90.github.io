@@ -1,4 +1,4 @@
-﻿---
+---
 title : "[DataStructure]C# Dictionary"
 layout: post
 author: Kim heetae
@@ -57,7 +57,7 @@ public class DictionaryEnumTest : MonoBehaviour
 }
 ```
 
-![Dictionary 인스턴스 생성 시 가비지 량](/assets/images/post/2019-03-12-Dictionary-Key-Garbage/2019-03-12-init-garbage.jpg)
+![Dictionary 인스턴스 생성 시 가비지 량](/assets/resource/2019-03-12-Dictionary-Key-Garbage/2019-03-12-init-garbage.jpg)
 
 Enum 타입을 Key로 한 Dictionary의 가비지량이 0.2KB 정도 더 많다
 

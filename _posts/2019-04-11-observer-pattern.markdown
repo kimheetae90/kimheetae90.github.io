@@ -1,4 +1,4 @@
-﻿---
+---
 title : "[DesignPattern]Observer Pattern"
 layout: post
 author: Kim heetae
