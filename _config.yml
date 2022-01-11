@@ -1,76 +1,197 @@
-# Site
-title: Kimi's Blog
-bio: Kimi's blog
-description: Kimi's blog
-reading_time: true
-words_per_minute: 200
-logo: 'assets/img/logo.png'
-background: 'assets/img/placeholder-big.jpg'
-tiled_bg: false   # Set this true if you want to tile your background image, otherwise it will be covered
-locale: "ko"
-url: https://kimheetae90.github.io
+title: Kimit
+subtitle: Kimit's Game Tech & Portfolio Blog
+description: >- # this means to ignore newlines until "baseurl:"
+  devlopr-jekyll 을 기반으로 만든 Kimit의 게임 기술, 포트폴리오 블로그 입니다!
 
-# Jekyll
-permalink: /:title/
+url: "https://kimheetae90.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Navigation
+urls:
+    - text: Home
+      url: /
+    # - text: About
+    #   url: /about
+    - text: Blog
+      url: /blog
+    # - text: Gallery
+    #   url: /gallery    
+    # - text: Contact
+    #   url : /contact
+
+
+# Edit Author details (For multi authors check _data/authors.yml)
+
+author_logo: profile.png
+author: Kimit
+author_bio: GameClient Developer :D
+author_email: "kimheetae90@gmail.com"
+author_location: Korea
+# author_website_url: "https://sujaykundu.com"
+typewrite-text: 총명이 둔필만 못하다...
+hero_cover_img: sample_cover.jpg # replace this for changing homepage cover (eg. try cover.jpeg). Image should be in /assets/img
+
+# Experiences
+author_work_experiences:
+            # - company_name: 넷마블몬스터
+            #   company_logo: google.png
+            #   company_url: http://company.netmarble.com/studio/list/monster
+            #   designation: Game Client Developer
+            #   description: 2016.10 ~ 2022.2
+            #   visibility: true
+            # - company_name: 넷마블게임즈
+            #   company_logo: microsoft.png
+            #   company_url: https://www.netmarble.net/
+            #   designation: Game Client Developer
+            #   description: 2016.03 ~ 2016.10
+            #   visibility: true
+
+# Education
+author_education_details:
+              # - college_logo: mit.png
+              #   college_name: 아주대학교
+              #   college_url: https://www.ajou.ac.kr/kr/index.do
+              #   college_degree: 미디어학부
+              #   description: 미디어학부
+              #   visibility: true
+
+# Projects
+author_project_details:
+              # - project_thumbnail: gamershub.png
+              #   project_title: 마블퓨처레볼루션
+              #   project_description: 마블 최초 모바일 MMORPG
+              #   project_url: https://www.marvelfuturerevolution.com/ko
+              #   visibility: true
+              # - project_thumbnail: hack4r.PNG
+              #   project_title: 레이븐
+              #   project_description: 액션RPG
+              #   project_url: https://www.netmarble.net/mobile/rav
+              #   visibility: true
+
+# social links
+#twitter_username: johndoe
+github_username:  kimit
+#facebook_username: johndoe
+#linkedin_username: johndoe
+#behance_username: johndoe
+#instagram_username: johndoe
+#medium_username: johndoe
+#telegram_username: johndoe
+#dribbble_username: johndoe
+#flickr_username: johndoe
+
+#for comments ( we got Disqus and Hyvor Commenting, uncomment the one you want to use )
+
+# disqus_shortname: sujay-kundu
+#hyvor_talk_website_id: 476
+
+# wakatime username (coding activity)
+#wakatime_username: sujaykundu777
+
+# mailchimp embedded form url (newsletter):
+#mailchimp_form_url: https://sujaykundu.us10.list-manage.com/subscribe/post?u=50bab1c85eae24ecfb0f68361&amp;id=3a2dd721d0
+
+# contact form - (choose formspress or getform)
+# getform_endpoint: 83b703c3-9e47-4df4-ac55-e24d7eb02abc
+formspree_email: kimheetae90@gmail.com
+
+# releases - widget can be (sidebar, modal or embed)
+olvy_organization: devlopr
+olvy_widget_type: sidebar
+
+# syntax highlighter
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
-mathjax: true
-sass:
-  sass_dir: _sass
-  style: compressed
+permalink: pretty
 
-# Comments
-disqus_shortname: taylantatli
+# Choose what to show ( can be true or false)
+show_author_work_experiences: true
+show_author_education_details: true
+show_author_project_details: true
 
-# Social
-# if you don't have any of social below, comment the line.
-#google:
-  #plus:            #username
-  #analytics:
-  #verify:
-  #ad-client:
-  #ad-slot:
-#bing-verify:
-email: kimheetae90@gmail.com
-#twitter:            username
-#facebook:           username
-github-url: kimheetae90/
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
-#xing:              username
-#instagram:          username
-#lastfm:            username
-#tumblr:            username
-#medium:            '@username'
-#pinterest:         username
-#foursquare:        username
-#steam:              username
-#dribbble:          username
-#youtube:           username
-#youtube-channel:   channel
-#soundcloud:        username
-#weibo:             username
-#flickr:            username
-#codepen:           username
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
+# pagination of posts
+paginate: 4
+per_page: 4
+paginate_path: "/blog/page/:num/"
 
-# Gems
-gems:
-  - jekyll-mentions
-  - jekyll-feed
-  - jekyll-sitemap
+# minify
+# compress_html:
+#   clippings: all
+#   comments: ["<!-- ", " -->"]
+#   endings: all
+#   ignore:
+#     envs: ['development']
+
+# Archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#   layout: archive
+#   permalinks:
+#     category: '/category/:name/'
+
+collections:
+  products:
+    output: true
+  authors:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: "gallery"
+    values:
+      permalink: /:path/:basename:output_ext
+  -
+    scope:
+      path: ""
+      type: authors
+    values:
+      layout: author
+      permalink: /blog/authors/:slug
+
+# Build settings
+plugins:
+  - jekyll-paginate
   - jekyll-gist
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-admin
 
-jekyll-mentions:
-    base_url: https://github.com
+# Jekyll Admin Config
+jekyll_admin:
+  # hidden_links:
+  #   - posts
+  #   - pages
+  #   - staticfiles
+  #   - datafiles
+  #   - configuration
+  homepage: "posts"
 
-# Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+
+### Switching Deployment Strategy (in DEPLOY_STRATEGY) file change the key accordingly:
+# none - For no default
+# gh-pages - For Github Pages
+# firebase - For Firebase Hosting
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+destination: ./build
